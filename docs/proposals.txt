@@ -1,1 +1,8 @@
-Here are our proposals: 
+Idea One: Rally
+
+Rally is a web application that allows users to socially connect with friends and provides options for their next meet up. A user logs in with their corresponding social media account (third-party authentication). Friends can follow the link that directs them to their “Rally page”, and the web app generates 3+ ideas (in a similar format to how a slot machine at the Casino works) that cover food, local events and other ideas. Users will vote using a poll, the poll will close, and they will be notified of the winning choice. Rally will send the plan of the option to all users involved, and share details such as time, location, transportation options and any other notes. There will also be an in-built chat function, allowing the users to discuss plans further. We plan on using Yelp, OpenTable and Eventful’s API’s, as well as having a database for the user profiles and the list of “Rally’s” that are created. 
+
+
+Two: CapThat. 
+
+CapThat is a web application that creates a creative caption for a user to upload to a social media website (i.e Instagram, Twitter, Facebook). A user logs in with their corresponding social media account (third-party authentication). It uses an image recognition API to identify what is in the photo. A user can then suggest songs that align with the photo, or allow the website to find songs that correlate with the photo. Then, using a song lyric API, the lyrics will be put into a text summarization API to create a corresponding caption. For example, if you have a photo of Donald Trump, but don’t know what to caption it, CapThat would find 3+ songs with Trump included in them and create a (most likely and deservingly negative) caption. We would use a database to keep track of the users and the corresponding photos/captions they have created. 
