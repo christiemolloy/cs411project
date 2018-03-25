@@ -1,6 +1,8 @@
 Technology Stack 
 
-We are choosing to use a MEAN Stack for its simplicity, common structure. It is also open-sourced so we will pay no fees.
+When thinking about what stack we want to use, we thought about keeping it simple and agile, the personal requirements for 
+the users of CapThat, OpenSource technology, the eco system behind the stack that we choose, and the teams prior knowledge with the different languages etc. We considered using Ruby on Rails or a MEAN stack, but choose to use the MEAN stack because 
+Node.js is a fantastic solution for performing highly concurrent, low-cpu processing applications, and RubyonRails is good for CRUD operations, which our app won't be doing too much of.
 
 MongoDB will serve as the backend for our project for its flexibitity being a non-relational database.
 
