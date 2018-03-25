@@ -1,12 +1,12 @@
 Technology Stack 
 
-We are choosing to use a MEAN Stack as it is all encompassing. 
+We are choosing to use a MEAN Stack for its simplicity, common structure. It is also open-sourced so we will pay no fees.
 
-MongoDB will serve as the backend for our project, and since it is non-relational its ideal for our project. 
+MongoDB will serve as the backend for our project for its flexibitity being a non-relational database.
 
 Express will help us to manage our routes, handling requests and views. 
 
 Angular will helps us to manage the front-end easily as it uses uses HTML to define the apps interface and the data models are Javascript objects. 
 
-Node.JS will help us manage the JavaScript run-time environment that executes JavaScript code server-side and produce dynamic web content before the page is sent to the web browser. 
+Node.JS will help us manage the JavaScript run-time environment that executes JavaScript code server-side and produce dynamic web content before the page is sent to the web browser. NodeJS is lightweight and efficient, ideal for data-intensive real-time applications.
 
