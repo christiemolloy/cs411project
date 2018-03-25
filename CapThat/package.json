@@ -6,6 +6,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "clarifai": "^2.6.0",
     "constantinople": "^3.1.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
