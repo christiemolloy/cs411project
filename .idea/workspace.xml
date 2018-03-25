@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="da7ff48b-7ff0-4916-9844-e33bb08e1b45" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/CapThat/routes/index.js" afterPath="$PROJECT_DIR$/CapThat/routes/index.js" />
-    </list>
+    <list default="true" id="da7ff48b-7ff0-4916-9844-e33bb08e1b45" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -178,12 +176,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1521992487447</updated>
-      <workItem from="1521992489282" duration="1417000" />
+      <workItem from="1521992489282" duration="1551000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1417000" />
+    <option name="totallyTimeSpent" value="1551000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="139" y="43" width="1400" height="919" extended-state="0" />
