@@ -1,1 +1,7 @@
-This is user story number 1. 
+User Story #1: Logging in: 
+
+When approaching CapThat for the first time in awhile, a user is directed to the onboarding site right away. If they have never created an account before, they can easily create an account directly within the website by inputting their information, or using third party authentication and creating an account through Facebook, Twitter, or Google. After successfully creating an account, the user is directed to their profile page where they can update their information, add a bio/profile picture, etc. 
+
+Another user may have already visited CapThat, and is now coming back to create more inventive captions for their photos. On the onboarding site, they may sign in through their account or through a third party authentication. Once signed in, the user is taken to the "newsfeed" page where they can view captions. Furthermore, they can go to their profile to view their previously uploaded and captioned photos and then continue to create more captions. 
+
+The last user scenario is when a user comes to CapThat solely to caption a single photo- they are using this web app for its utility. The user continues as a guest from the onboarding page and is immediately taken to an "upload photo" page, where they complete the necessary steps to caption their photo. They may not view the newsfeed nor create/update a profile, and their photos that are captioned will not be saved (as they do not have a profile to save it to). 
