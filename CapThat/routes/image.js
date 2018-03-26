@@ -3,20 +3,10 @@ var router = express.Router();
 
 const Clarifai = require("clarifai");
 const app = new Clarifai.App({
-    apiKey: 'fe2b42b4d83e4f01ababb8c56ccdd08d'
-});
-
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'CapThat' });
+ apiKey: 'fe2b42b4d83e4f01ababb8c56ccdd08d'
 });
 
 
-
-/* GET image page. */
-router.get('/image', function(req, res, next) {
-    res.render('image', { title: 'Upload image' });
-});
 
 
 router.post('/image', function(req, res, next) {
@@ -28,7 +18,6 @@ router.post('/image', function(req, res, next) {
     app.models.predict(Clarifai.GENERAL_MODEL, req.body.imageurl).then(
         function(response) {
             console.log(JSON.stringify(response));
-            res.render('image', { result: JSON.parse(response) });
         },
         function(err) {
             console.error(err);
@@ -36,7 +25,18 @@ router.post('/image', function(req, res, next) {
     );
 
 
+    if (error) throw new Error(error);
+
+    console.log(req);
+
+
+    res.render('image', { result: JSON.parse(response) });
 
 });
 
+
+
 module.exports = router;
+
+
+
