@@ -28,7 +28,8 @@ router.post('/image', function(req, res, next) {
     app.models.predict(Clarifai.GENERAL_MODEL, req.body.imageurl).then(
         function(response) {
             console.log(JSON.stringify(response));
-            res.render('image', { result: JSON.parse(response) });
+            res.json(response);
+            //res.render('image', { result: JSON.parse(response) });
         },
         function(err) {
             console.error(err);
