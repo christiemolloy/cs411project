@@ -1,9 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
+//Get the api key
+let api_key = require('../config/clarifai').CONSUMER_KEY;
+
 const Clarifai = require("clarifai");
 const app = new Clarifai.App({
-    apiKey: 'fe2b42b4d83e4f01ababb8c56ccdd08d'
+    apiKey: api_key
 });
 
 /* GET home page. */
