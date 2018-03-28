@@ -6,8 +6,12 @@ block content
 
   a(href='/image') go to image page
 
-  label Insert Image URL
+  p
+  div
+    label Insert Image URL Below:
 
+  div
   form(action='/image', method = 'post')
     input(type = 'text', name = 'imageurl', placeholder='Insert URL Here')
-    input(type = 'submit', action='/image')
+    div
+      input(type = 'submit', action='/image')

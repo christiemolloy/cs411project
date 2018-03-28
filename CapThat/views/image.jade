@@ -7,5 +7,25 @@ block content
     a(href='/') go back
 
 
+    h1 List of top 5 words & probabilities returned:
+    div
+        ul
+            li  #{JSON.stringify(result.outputs[0].data.concepts[0].name)} :
+                #{JSON.stringify(result.outputs[0].data.concepts[0].value)}
 
-    p List of words returned: #{JSON.stringify(result.outputs[0].data)}
+            li  #{JSON.stringify(result.outputs[0].data.concepts[1].name)} :
+                #{JSON.stringify(result.outputs[0].data.concepts[1].value)}
+
+            li  #{JSON.stringify(result.outputs[0].data.concepts[2].name)} :
+                #{JSON.stringify(result.outputs[0].data.concepts[2].value)}
+
+            li  #{JSON.stringify(result.outputs[0].data.concepts[3].name)} :
+                #{JSON.stringify(result.outputs[0].data.concepts[3].value)}
+
+            li  #{JSON.stringify(result.outputs[0].data.concepts[4].name)} :
+                #{JSON.stringify(result.outputs[0].data.concepts[4].value)}
+
+            li  #{JSON.stringify(result.outputs[0].data.concepts[5].name)} :
+                #{JSON.stringify(result.outputs[0].data.concepts[5].value)}
+
+
