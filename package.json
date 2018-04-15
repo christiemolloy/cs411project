@@ -1,0 +1,27 @@
+{
+  "name": "capthat",
+  "version": "1.0.0",
+  "description": "database for CapThat",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stephshin2/cs411project.git"
+  },
+  "keywords": [
+    "photo",
+    "caption",
+    "lyrics"
+  ],
+  "author": "Stephanie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stephshin2/cs411project/issues"
+  },
+  "homepage": "https://github.com/stephshin2/cs411project#readme"
+}
