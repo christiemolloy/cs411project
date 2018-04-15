@@ -1,0 +1,21 @@
+{
+	‘id’: 0001, 
+	‘name’: {email:’cmolloy@bu.edu’, username: ‘cmolloy’}, 
+	‘capthats’ : 
+[
+		{
+			‘photoID’: 001, 
+			‘photolink’: ‘link.html’
+			‘keywords’ : {‘word’, ‘word’, ‘word’}
+			‘song1’ : ‘…lyrics…’
+			‘caption’: ‘…’
+		}, 
+		{
+			‘photoID’: 001, 
+			‘photolink’: ‘link.html’
+			‘keywords’ : {‘word’, ‘word’, ‘word’}
+			‘song1’ : ‘…lyrics…’
+			‘caption’: ‘…’
+		},
+]
+}
