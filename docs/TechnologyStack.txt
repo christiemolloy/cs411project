@@ -1,0 +1,14 @@
+Technology Stack 
+
+When thinking about what stack we want to use, we thought about keeping it simple and agile, the personal requirements for 
+the users of CapThat, OpenSource technology, the eco system behind the stack that we choose, and the teams prior knowledge with the different languages etc. We considered using Ruby on Rails or a MEAN stack, but choose to use the MEAN stack because 
+Node.js is a fantastic solution for performing highly concurrent, low-cpu processing applications, and RubyonRails is good for CRUD operations, which our app won't be doing too much of.
+
+MongoDB will serve as the backend for our project for its flexibitity being a non-relational database.
+
+Express will help us to manage our routes, handling requests and views. 
+
+Angular will helps us to manage the front-end easily as it uses uses HTML to define the apps interface and the data models are Javascript objects. 
+
+Node.JS will help us manage the JavaScript run-time environment that executes JavaScript code server-side and produce dynamic web content before the page is sent to the web browser. NodeJS is lightweight and efficient, ideal for data-intensive real-time applications.
+

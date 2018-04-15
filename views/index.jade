@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  a(href='/image') go to image page
+
+  p
+  div
+    label Insert Image URL Below:
+
+  div
+  form(action='/image', method = 'post')
+    input(type = 'text', name = 'imageurl', placeholder='Insert URL Here')
+    div
+      input(type = 'submit', action='/image')

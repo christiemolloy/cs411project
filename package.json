@@ -1,0 +1,40 @@
+{
+  "name": "capthat",
+  "version": "1.0.0",
+  "description": "database for CapThat",
+  "main": "index.js",
+  "private": true,
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "mocha"
+  },
+  "dependencies": {
+    "clarifai": "^2.6.0",
+    "constantinople": "^3.1.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.0",
+    "pug": "^2.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stephshin2/cs411project.git"
+  },
+  "keywords": [
+    "photo",
+    "caption",
+    "lyrics"
+  ],
+  "author": "Stephanie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stephshin2/cs411project/issues"
+  },
+  "homepage": "https://github.com/stephshin2/cs411project#readme"
+}
