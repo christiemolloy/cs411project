@@ -26,4 +26,15 @@ block content
                 #{JSON.stringify(result.outputs[0].data.concepts[4].value)}
 
 
+    p
+    div
+        label Insert Words Below:
+
+    div
+    form(action='/lyrics', method = 'post')
+        input(type = 'text', name = 'words', placeholder='Insert Words Here')
+        div
+            input(type = 'submit', action='/lyrics')
+
+
 
