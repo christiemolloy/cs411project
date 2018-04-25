@@ -4,13 +4,5 @@ block content
     h1= title
     p Welcome to #{title}
 
-    h1 List of 5 songs:
-    div
-        ul
-            li  #{JSON.stringify(result[0].result.full_title)}
-            li  #{JSON.stringify(result[1].result.full_title)}
-            li  #{JSON.stringify(result[2].result.full_title)}
-            li  #{JSON.stringify(result[3].result.full_title)}
-            li  #{JSON.stringify(result[4].result.full_title)}
-// result[0].result.api_path
-    api_path: '/songs/12345'
+    h1 lyrics of a song
+    p #{JSON.stringify(result)}
