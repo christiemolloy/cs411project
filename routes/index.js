@@ -16,10 +16,20 @@ const Genius_app = new Genius(Genius_api_key);
 const Lyrics = require('lyric-get');
 
 
+//database
+const wordLyrics = require('../models/word_lyrics');
 
-/* GET home page. */
+
+
+
+    /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'CapThat' });
+});
+
+/* GET twitter user profile page. */
+router.get('/profileT', function(req, res, next) {
+    res.render('profileT', { title: 'ProfileT' });
 });
 
 
@@ -52,6 +62,7 @@ router.post('/image', function(req, res, next) {
 });
 
 
+//get the lyrics for the input word
 router.post('/lyrics', function(req, res, next) {
     //console.log(req.body);
     console.log(req.body.words);
@@ -59,19 +70,38 @@ router.post('/lyrics', function(req, res, next) {
     Genius_app.search(req.body.words).then(
         function(response) {
             console.log(response.hits);
+            var word = req.body.words;
+            console.log(word);
             var title = response.hits[0].result.title;
             var artist = response.hits[0].result.full_title.split("by")[1];
             console.log("title is: ", title);
             console.log("artist is: ", artist);
-                Lyrics.get(artist, title, function(err, results) {
-                    if(err) {
-                        console.log(err);
-                    }
-                    else {
-                        console.log(res);
-                        res.render('lyrics', {title: 'lyrics', result: results});
-                    }
-                });
+            wordLyrics.count({word: word},function(err, result){
+                console.log("The number of matching entry found is ");
+                console.log(result);
+                if(result != 0){
+                    wordLyrics.findOne({word: word}, function(err, result){
+                        res.render('lyrics', {title: 'lyrics', result: result['lyrics']});
+                    })
+
+
+                }
+                else{
+                    Lyrics.get(artist, title, function(err, results) {
+                        if(err) {
+                            console.log(err);
+                        }
+                        else {
+                            console.log("Called the lyrics API");
+                            //console.log(res);
+                            var parsed_result = results.split('\n');
+                            wordLyrics.create({word: String(word), lyrics: parsed_result});
+                            res.render('lyrics', {title: 'lyrics', result: parsed_result});
+                        }
+                    })
+                }
+            })
+
 
         },
         function(err) {
