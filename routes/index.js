@@ -81,6 +81,43 @@ router.post('/lyrics', function(req, res, next) {
 
 });
 
+router.post('/razor', function(req,res,next){
+  console.log("made it to razor")
+  var headers = {
+      'x-textrazor-key': '029b5c96ab859efba5f7cef25654cf11c4f765b17fc71aeb618f9b78'
+  };
+
+  var dataString = 'extractors=phrases,words&text='+req.body.textblock;
+
+  var options = {
+      url: 'https://api.textrazor.com/',
+      method: 'POST',
+      headers: headers,
+      body: dataString
+  };
+
+  console.log(req.body);
+
+
+
+  function callback(error, response, body) {
+      if (!error && response.statusCode == 200) {
+          res.render('razor', {result: JSON.parse(body)});
+      }
+  }
+
+  var body;
+
+  request(options, callback);
+
+
+  console.log("body starting");
+  console.log(body);
+  console.log("body ending");
+
+  // res.render('razor');
+
+});
 
 
 
