@@ -2,6 +2,9 @@ var express = require('express');
 var router = express.Router();
 var request = require('request');
 
+exports.index = function(req, res){
+res.render('index', { title: 'ejs' });};
+
 //Get the api key
 let Clarifai_api_key = require('../config/clarifai').CONSUMER_KEY;
 let Genius_api_key = require('../config/genius').CLIENT_ACCESS_TOKEN;
