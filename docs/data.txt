@@ -1,0 +1,26 @@
+Planned database structure (mongoDB): 
+{
+	‘id’: 0001, 
+	‘name’: {email:’cmolloy@bu.edu’, username: ‘cmolloy’}, 
+	‘capthats’ : 
+[
+		{
+			‘photoID’: 001, 
+			‘photolink’: ‘link.html’
+			‘keywords’ : {‘word’, ‘word’, ‘word’}
+			‘song1’ : ‘…lyrics…’
+			‘caption’: ‘…’
+		}, 
+		{
+			‘photoID’: 001, 
+			‘photolink’: ‘link.html’
+			‘keywords’ : {‘word’, ‘word’, ‘word’}
+			‘song1’ : ‘…lyrics…’
+			‘caption’: ‘…’
+		},
+]
+}
+
+Planned cache implementation: 
+We plan to cache the words we receive describing the photo from the first API call to the clarifai API. Then, we will use those cached words in order to find corresponding song lyrics. We will again cache the lyrics after using the song lyric API in order to call the last API to pick a caption for the photo. 
+
