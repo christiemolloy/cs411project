@@ -10,8 +10,11 @@ const Clarifai_app = new Clarifai.App({
     apiKey: Clarifai_api_key
 });
 
-var Genius = require('genius-api');
-var Genius_app = new Genius(Genius_api_key);
+const Genius = require('genius-api');
+const Genius_app = new Genius(Genius_api_key);
+
+const Lyrics = require('lyric-get');
+
 
 
 /* GET home page. */
@@ -50,32 +53,34 @@ router.post('/image', function(req, res, next) {
 
 
 router.post('/lyrics', function(req, res, next) {
-    console.log(req.body);
+    //console.log(req.body);
     console.log(req.body.words);
-
-
-    // Genius_app.song().then(
-    //     function(response) {
-    //         console.log("*******");
-    //         console.log(response);
-    //     },
-    //     function(err) {
-    //         console.error(err);
-    //     }
-    // );
 
     Genius_app.search(req.body.words).then(
         function(response) {
             console.log(response.hits);
+            var title = response.hits[0].result.title;
+            var artist = response.hits[0].result.full_title.split("by")[1];
+            console.log("title is: ", title);
+            console.log("artist is: ", artist);
+                Lyrics.get(artist, title, function(err, results) {
+                    if(err) {
+                        console.log(err);
+                    }
+                    else {
+                        console.log(res);
+                        res.render('lyrics', {title: 'lyrics', result: results});
+                    }
+                });
 
-            res.render('lyrics', {title: 'song search results', result: response.hits});
-            //res.redirect??
         },
         function(err) {
             console.error(err);
         }
-    )
+    );
+
 });
+
 
 
 

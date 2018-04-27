@@ -20,6 +20,7 @@
     "genius-api": "^0.4.1",
     "http-errors": "~1.6.2",
     "jade": "~1.11.0",
+    "lyric-get": "^1.0.3",
     "morgan": "~1.9.0",
     "musicmatch": "^0.2.6",
     "pug": "^2.0.3",
