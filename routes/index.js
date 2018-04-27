@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var request = require('request');
 
 //Get the api key
 let Clarifai_api_key = require('../config/clarifai').CONSUMER_KEY;
@@ -81,6 +82,7 @@ router.post('/lyrics', function(req, res, next) {
 
 });
 
+<!--Razor api-->
 router.post('/razor', function(req,res,next){
   console.log("made it to razor")
   var headers = {
@@ -95,14 +97,32 @@ router.post('/razor', function(req,res,next){
       headers: headers,
       body: dataString
   };
-
   console.log(req.body);
-
-
 
   function callback(error, response, body) {
       if (!error && response.statusCode == 200) {
-          res.render('razor', {result: JSON.parse(body)});
+          var jsonObj = JSON.parse(response.body);
+          var numberRan1 = Math.floor(Math.random() * 10);
+          var numberRan2 = Math.floor(Math.random() * 10);
+          var numberRan3 = Math.floor(Math.random() * 10);
+          var numberRan4 = Math.floor(Math.random() * 10);
+          var token1 = String(jsonObj.response.sentences[0].words[numberRan1].token);
+          var token2 = String(jsonObj.response.sentences[0].words[numberRan2].token);
+          var token3 = String(jsonObj.response.sentences[0].words[numberRan3].token);
+          var token4 = String(jsonObj.response.sentences[0].words[numberRan4].token);
+          // var token3 = jsonObj.response.sentences[0].words[numberRan].token;
+          // var token4 = jsonObj.response.sentences[0].words[numberRan].token;
+          // if (token1 !== ',') {
+          //   var word1 = token1;
+          // }
+          // else {
+          //
+          // };
+
+          // if (mpartOfSpeech == 'NN' || mpartOfSpeech == 'NNS' || mpartOfSpeech == 'NNP') {
+          //   console.log(hi);
+          // };
+          res.render('razor', {result1: token1, result2: token2, result3: token3, result4: token4});
       }
   }
 
@@ -111,16 +131,7 @@ router.post('/razor', function(req,res,next){
   request(options, callback);
 
 
-  console.log("body starting");
-  console.log(body);
-  console.log("body ending");
-
-  // res.render('razor');
-
 });
-
-
-
 
 
 
