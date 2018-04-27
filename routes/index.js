@@ -53,8 +53,11 @@ router.post('/image', function(req, res, next) {
 
 
 router.post('/lyrics', function(req, res, next) {
-    //console.log(req.body);
     console.log(req.body.words);
+    // console.log(req.body.words.split(','));
+    // console.log(req.body.words.split(',')[0]);
+    // console.log(req.body.words.split(',')[1]);
+    // console.log(req.body.words.split(',')[2]);
 
     Genius_app.search(req.body.words).then(
         function(response) {
@@ -69,7 +72,7 @@ router.post('/lyrics', function(req, res, next) {
                     }
                     else {
                         console.log(res);
-                        res.render('lyrics', {title: 'lyrics', result: results});
+                        res.render('lyrics', {title: 'lyrics', result: results.split('\n')});
                     }
                 });
 
@@ -77,8 +80,7 @@ router.post('/lyrics', function(req, res, next) {
         function(err) {
             console.error(err);
         }
-    );
-
+    )
 });
 
 router.post('/razor', function(req,res,next){
