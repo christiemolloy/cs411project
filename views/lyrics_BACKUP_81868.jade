@@ -1,6 +1,11 @@
 extends layout
 
 block content
+    h1 #{title}
+
+<<<<<<< HEAD
+    p #{JSON.stringify(result)}
+=======
     h1 lyrics of a song
     p #{JSON.stringify(result)}
 
@@ -11,3 +16,4 @@ block content
       input(type = 'text', name = 'textblock', placeholder='Insert Lyrics Here')
       div
         input(type = 'submit', action='/razor')
+>>>>>>> 4ef94e4656782f35f315ed1d5f9b26a7598e5956
