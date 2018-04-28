@@ -14,7 +14,7 @@ html, body {
 }
 
 /*---------------------------------------
-  TYPOGRAPHY              
+  TYPOGRAPHY
 -----------------------------------------*/
 
 h1,h2,h3,h4,h5,h6 {
@@ -55,7 +55,7 @@ p {
 
 
 /*---------------------------------------
-  BUTTONS               
+  BUTTONS
 -----------------------------------------*/
 
 .section-btn {
@@ -81,7 +81,8 @@ p {
   font-weight: normal;
   letter-spacing: 0.5px;
   padding: 0 25px;
-  background: #EC7063;
+  background: white;
+  color:blue;
   border-radius: 1px;
     /*-webkit-transition: -webkit-transform 0.3s;
     -moz-transition: -moz-transform 0.3s;
@@ -132,12 +133,12 @@ p {
 
 .csstransforms3d .section-btn button:hover span::before,
 .csstransforms3d .section-btn button:hover span::before {
-  background: #000000;  
+  background: #000000;
 }
 
 
 /*---------------------------------------
-  GENERAL               
+  GENERAL
 -----------------------------------------*/
 
 html{
@@ -200,7 +201,7 @@ a:hover, a:active, a:focus {
 
 
 /*---------------------------------------
-  PRE LOADER              
+  PRE LOADER
 -----------------------------------------*/
 
 .preloader {
@@ -249,7 +250,7 @@ a:hover, a:active, a:focus {
 
 
 /*---------------------------------------
-  MENU             
+  MENU
 -----------------------------------------*/
 
 .custom-navbar {
@@ -321,7 +322,7 @@ a:hover, a:active, a:focus {
 
 @media(min-width:768px) {
   .custom-navbar {
-    background: 0 0; 
+    background: 0 0;
   }
   .custom-navbar.top-nav-collapse {
     background: #EC7063;
@@ -331,7 +332,7 @@ a:hover, a:active, a:focus {
 
 
 /*---------------------------------------
-  HOME             
+  HOME
 -----------------------------------------*/
 
 #home {
@@ -435,7 +436,7 @@ a{
 
 
 /*---------------------------------------
-  ABOUT              
+  ABOUT
 -----------------------------------------*/
 
 #about {
@@ -452,7 +453,7 @@ a{
 
 
 /*---------------------------------------
-  PROJECT              
+  PROJECT
 -----------------------------------------*/
 
 .project-item {
@@ -507,7 +508,7 @@ a{
 
 
 /*---------------------------------------
-   TEAM             
+   TEAM
 -----------------------------------------*/
 
 #team .item {
@@ -569,7 +570,7 @@ a{
 
 
 /*---------------------------------------
-  CONTACT             
+  CONTACT
 -----------------------------------------*/
 
 #contact {
@@ -620,7 +621,7 @@ a{
 
 
 /*---------------------------------------
-  FOOTER              
+  FOOTER
 -----------------------------------------*/
 
 footer {
@@ -642,7 +643,7 @@ footer .copyright-text {
 
 
 /*---------------------------------------
-  SOCIAL ICON             
+  SOCIAL ICON
 -----------------------------------------*/
 
 .social-icon {
@@ -677,7 +678,7 @@ footer .copyright-text {
 
 
 /*---------------------------------------
-  MOBILE RESPONSIVE              
+  MOBILE RESPONSIVE
 -----------------------------------------*/
 
 @media (max-width: 992px) {
