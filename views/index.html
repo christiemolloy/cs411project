@@ -56,7 +56,7 @@
                     <span class="icon icon-bar"></span>
                 </button>
                 <!-- lOGO -->
-                <a href="index" class="navbar-brand"><b>CapThat</b></a>
+                <a href="/" class="navbar-brand"><b>CapThat</b></a>
             </div>
 
             <!-- MENU LINKS -->
@@ -77,30 +77,20 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-md-8 col-sm-12">
-                    <div class="home-text">
+                <div class="col-md-12 col-sm-12">
+                    <div class="home-text" style="text-align:center">
                         <h1>Caption Your Images</h1>
                         <p>Generate relatable captions for your photo</p>
                         <div>
-                            <!-- extends layout
-                            block content
-                              h1= title
-                              p Welcome to #{title}
-                              a(href='/image') go to image page
-                              p
-                              div
-                                label Insert Image URL Below:
-                              div
-                              form(action='/image', method = 'post')
-                                input(type = 'text', name = 'imageurl', placeholder='Insert URL Here')
-                                div
-                                  input(type = 'submit', action='/image') -->
+
 
                         </div>
-                        <ul class="section-btn">
-                            <a href="caption" class="smoothScroll"><span data-hover="Start">Start</span></a>
+
+                        <ul class="section-btn col-md-6" style="margin-bottom: 30px;">
+                            <a href="create" class="smoothScroll col-md-6"><span data-hover="Start">Start as Guest</span></a>
+
                             <div data-ng-hide="authorized">
-                                <button type="submit" data-ng-click="doTwitterAuth()" style="border:none;background-color:#00aced;height:45px;border-radius:2px;">Log in with Twitter</button>
+                                <button type="submit" data-ng-click="doTwitterAuth()" style="border:none;padding: 0 25px;background-color:blue;height:45px;font-size: 14pt;border-radius:3px;">Log in with Twitter</button>
                             </div>
 
                         </ul>
@@ -304,5 +294,17 @@
 <!--Controllers for this page/app -->
 <script src = "/../js/controllers.js"></script>
 
-</body>
+</body>  <!-- extends layout
+  block content
+    h1= title
+    p Welcome to #{title}
+    a(href='/image') go to image page
+    p
+    div
+      label Insert Image URL Below:
+    div
+    form(action='/image', method = 'post')
+      input(type = 'text', name = 'imageurl', placeholder='Insert URL Here')
+      div
+        input(type = 'submit', action='/image') -->
 </html>

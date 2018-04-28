@@ -18,7 +18,7 @@ html, body {
 -----------------------------------------*/
 
 h1,h2,h3,h4,h5,h6 {
-  font-weight: 300;
+  font-weight: 500;
 }
 
 h1 {
@@ -77,13 +77,14 @@ p {
 .section-btn button span {
   position: relative;
   display: inline-block;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: normal;
   letter-spacing: 0.5px;
-  padding: 0 40px;
+  padding: 0 25px;
+
   background: white;
   color:blue;
-  border-radius: 3px;
+  border-radius: 1px;
     /*-webkit-transition: -webkit-transform 0.3s;
     -moz-transition: -moz-transform 0.3s;
     transition: transform 0.3s;
@@ -123,7 +124,6 @@ p {
 
 .section-btn button:hover span,
 .section-btn button:focus span {
-padding: 5px 45px;
 }
 
 .csstransforms3d .section-btn a:hover span::before,
