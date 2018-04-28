@@ -31,6 +31,13 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'CapThat' });
 });
 
+
+/* GET create page. */
+router.get('/create', function(req, res, next) {
+    res.render('create', {title: 'Create' });
+});
+
+
 /* GET twitter user profile page. */
 router.get('/profileT', function(req, res, next) {
     res.render('profileT', { title: 'ProfileT' });
