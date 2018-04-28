@@ -123,9 +123,6 @@ p {
 
 .section-btn button:hover span,
 .section-btn button:focus span {
-  -webkit-transform: rotateX(90deg) translateY(-22px);
-  -moz-transform: rotateX(90deg) translateY(-22px);
-  transform: rotateX(90deg) translateY(-22px);
 }
 
 .csstransforms3d .section-btn a:hover span::before,
