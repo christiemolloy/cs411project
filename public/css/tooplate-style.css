@@ -77,13 +77,13 @@ p {
 .section-btn button span {
   position: relative;
   display: inline-block;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: normal;
   letter-spacing: 0.5px;
-  padding: 0 25px;
+  padding: 0 40px;
   background: white;
   color:blue;
-  border-radius: 1px;
+  border-radius: 3px;
     /*-webkit-transition: -webkit-transform 0.3s;
     -moz-transition: -moz-transform 0.3s;
     transition: transform 0.3s;
@@ -123,9 +123,7 @@ p {
 
 .section-btn button:hover span,
 .section-btn button:focus span {
-  -webkit-transform: rotateX(90deg) translateY(-22px);
-  -moz-transform: rotateX(90deg) translateY(-22px);
-  transform: rotateX(90deg) translateY(-22px);
+padding: 5px 45px;
 }
 
 .csstransforms3d .section-btn a:hover span::before,
