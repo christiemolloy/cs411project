@@ -33,7 +33,7 @@
 </head>
 <body>
 
-<div ng-app="myApp" ng-controller="namesCtrl">
+<div ng-app="myApp" ng-controller="myCtrl">
 
 
     <!-- PRE LOADER -->
@@ -62,7 +62,7 @@
             <!-- MENU LINKS -->
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="create.html" class="smoothScroll">Create</a></li>
+                    <li><a href="create" class="smoothScroll">Create</a></li>
                     <li><a href="#" class="smoothScroll">Hi</a></li>
                 </ul>
             </div>
@@ -99,9 +99,9 @@
                         </div>
                         <ul class="section-btn">
                             <a href="create.html" class="smoothScroll"><span data-hover="Start">Start</span></a>
-                            <!--<div data-ng-hide="authorized">
+                            <div data-ng-hide="authorized">
                                 <button type="submit" data-ng-click="doTwitterAuth()" style="border:none;background-color:#00aced;height:45px;border-radius:2px;">Log in with Twitter</button>
-                            </div>-->
+                            </div>
 
                         </ul>
                     </div>
