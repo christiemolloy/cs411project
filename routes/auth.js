@@ -80,7 +80,7 @@ router.get('/callback',
         {failureRedirect: '/login',}),
     function (req, res) {
         res.cookie('authStatus', 'true')
-        res.redirect('../profileT')
+        res.redirect('../create')
     })
 
 
