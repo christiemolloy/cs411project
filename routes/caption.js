@@ -136,7 +136,7 @@ router.get('/lyrics/:name', function(req,res,next){
 
             <!-- Finding Noun 1 -->
             for (i=0; i < jsonObj.response.sentences[0].words.length; i++) {
-              if(jsonObj.response.sentences[0].words[i].partOfSpeech === "NN" || jsonObj.response.sentences[0].words[i].partOfSpeech === "NNS") {
+              if(jsonObj.response.sentences[0].words[i].partOfSpeech === "NN" || jsonObj.response.sentences[0].words[i].partOfSpeech === "NNS" || jsonObj.response.sentences[0].words[i].partOfSpeech === "NNS") {
                 token1 = jsonObj.response.sentences[0].words[i].token;
               }
               else {
@@ -184,13 +184,51 @@ router.get('/lyrics/:name', function(req,res,next){
               }
             }
 
+            <!-- Finding Noun5-->
+            for (i=0; i < jsonObj.response.sentences[0].words.length; i++) {
+              console.log("hi" + jsonObj.response.sentences[0].words[i].partOfSpeech);
+              if(jsonObj.response.sentences[0].words[i].partOfSpeech === "NN" || jsonObj.response.sentences[0].words[i].partOfSpeech === "NNS") {
+                if(jsonObj.response.sentences[0].words[i].token != token1 && jsonObj.response.sentences[0].words[i].token != token2 && jsonObj.response.sentences[0].words[i].token != token3 && jsonObj.response.sentences[0].words[i].token != token4) {
+                  token5 = jsonObj.response.sentences[0].words[i].token;
+                };
+              }
+              else {
+                i++;
+              }
+            }
+
+            <!-- Finding Noun6-->
+            for (i=0; i < jsonObj.response.sentences[0].words.length; i++) {
+              console.log("hi" + jsonObj.response.sentences[0].words[i].partOfSpeech);
+              if(jsonObj.response.sentences[0].words[i].partOfSpeech === "NN" || jsonObj.response.sentences[0].words[i].partOfSpeech === "NNS") {
+                if(jsonObj.response.sentences[0].words[i].token != token1 && jsonObj.response.sentences[0].words[i].token != token2 && jsonObj.response.sentences[0].words[i].token != token3 && jsonObj.response.sentences[0].words[i].token != token4 && jsonObj.response.sentences[0].words[i].token != token5) {
+                  token6 = jsonObj.response.sentences[0].words[i].token;
+                };
+              }
+              else {
+                i++;
+              }
+            }
+
+            <!-- Finding Noun7-->
+            for (i=0; i < jsonObj.response.sentences[0].words.length; i++) {
+              console.log("hi" + jsonObj.response.sentences[0].words[i].partOfSpeech);
+              if(jsonObj.response.sentences[0].words[i].partOfSpeech === "NN" || jsonObj.response.sentences[0].words[i].partOfSpeech === "NNS") {
+                if(jsonObj.response.sentences[0].words[i].token != token1 && jsonObj.response.sentences[0].words[i].token != token2 && jsonObj.response.sentences[0].words[i].token != token3 && jsonObj.response.sentences[0].words[i].token != token4 && jsonObj.response.sentences[0].words[i].token != token5 && jsonObj.response.sentences[0].words[i].token != token6) {
+                  token7 = jsonObj.response.sentences[0].words[i].token;
+                };
+              }
+              else {
+                i++;
+              }
+            }
 
 
             <!-- Finding Verb1 -->
             for (i=0; i < jsonObj.response.sentences[0].words.length; i++) {
               console.log("hi" + jsonObj.response.sentences[0].words[i].partOfSpeech);
               if(jsonObj.response.sentences[0].words[i].partOfSpeech === "VB" || jsonObj.response.sentences[0].words[i].partOfSpeech === "VBD" || jsonObj.response.sentences[0].words[i].partOfSpeech === "VBG" || jsonObj.response.sentences[0].words[i].partOfSpeech === "VBN" || jsonObj.response.sentences[0].words[i].partOfSpeech === "VBZ") {
-                token5 = jsonObj.response.sentences[0].words[i].token;
+                token8 = jsonObj.response.sentences[0].words[i].token;
               }
               else {
                 i++;
@@ -198,44 +236,6 @@ router.get('/lyrics/:name', function(req,res,next){
             }
 
 
-            <!-- Finding Verb2 -->
-            for (i=0; i < jsonObj.response.sentences[0].words.length; i++) {
-              console.log("hi" + jsonObj.response.sentences[0].words[i].partOfSpeech);
-              if(jsonObj.response.sentences[0].words[i].partOfSpeech === "VB" || jsonObj.response.sentences[0].words[i].partOfSpeech === "VBD" || jsonObj.response.sentences[0].words[i].partOfSpeech === "VBG" || jsonObj.response.sentences[0].words[i].partOfSpeech === "VBN" || jsonObj.response.sentences[0].words[i].partOfSpeech === "VBZ") {
-                if(jsonObj.response.sentences[0].words[i].token != token5) {
-                  token6 = jsonObj.response.sentences[0].words[i].token;
-              }
-              else {
-                i++;
-              }
-            }
-          }
-
-          <!-- Finding Verb3 -->
-          for (i=0; i < jsonObj.response.sentences[0].words.length; i++) {
-            console.log("hi" + jsonObj.response.sentences[0].words[i].partOfSpeech);
-            if(jsonObj.response.sentences[0].words[i].partOfSpeech === "VB" || jsonObj.response.sentences[0].words[i].partOfSpeech === "VBD" || jsonObj.response.sentences[0].words[i].partOfSpeech === "VBG" || jsonObj.response.sentences[0].words[i].partOfSpeech === "VBN" || jsonObj.response.sentences[0].words[i].partOfSpeech === "VBZ") {
-              if(jsonObj.response.sentences[0].words[i].token != token5 && jsonObj.response.sentences[0].words[i].token != token6) {
-                token7 = jsonObj.response.sentences[0].words[i].token;
-            }
-            else {
-              i++;
-            }
-          }
-        }
-
-        <!-- Finding Verb4 -->
-        for (i=0; i < jsonObj.response.sentences[0].words.length; i++) {
-          console.log("hi" + jsonObj.response.sentences[0].words[i].partOfSpeech);
-          if(jsonObj.response.sentences[0].words[i].partOfSpeech === "VB" || jsonObj.response.sentences[0].words[i].partOfSpeech === "VBD" || jsonObj.response.sentences[0].words[i].partOfSpeech === "VBG" || jsonObj.response.sentences[0].words[i].partOfSpeech === "VBN" || jsonObj.response.sentences[0].words[i].partOfSpeech === "VBZ") {
-            if(jsonObj.response.sentences[0].words[i].token != token5 && jsonObj.response.sentences[0].words[i].token != token6 && jsonObj.response.sentences[0].words[i].token != token7) {
-              token8 = jsonObj.response.sentences[0].words[i].token;
-          }
-          else {
-            i++;
-          }
-        }
-      }
 
             res.json([token1, token2, token3, token4, token5, token6, token7, token8]);
             console.log(token1, token2, token3, token4, token5, token6, token7, token8);
