@@ -224,7 +224,7 @@ router.get('/lyrics/:name', function(req,res,next){
           }
         }
 
-        <!-- Finding Verb3 -->
+        <!-- Finding Verb4 -->
         for (i=0; i < jsonObj.response.sentences[0].words.length; i++) {
           console.log("hi" + jsonObj.response.sentences[0].words[i].partOfSpeech);
           if(jsonObj.response.sentences[0].words[i].partOfSpeech === "VB" || jsonObj.response.sentences[0].words[i].partOfSpeech === "VBD" || jsonObj.response.sentences[0].words[i].partOfSpeech === "VBG" || jsonObj.response.sentences[0].words[i].partOfSpeech === "VBN" || jsonObj.response.sentences[0].words[i].partOfSpeech === "VBZ") {
