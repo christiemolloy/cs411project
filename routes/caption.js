@@ -125,14 +125,14 @@ router.get('/lyrics/:name', function(req,res,next){
         if (!error && response.statusCode == 200) {
             console.log("text razor working...");
             var jsonObj = JSON.parse(response.body);
-            var numberRan1 = Math.floor(Math.random() * 30);
-            var numberRan2 = Math.floor(Math.random() * 30);
-            var numberRan3 = Math.floor(Math.random() * 30);
-            var numberRan4 = Math.floor(Math.random() * 30);
-            var token1 = String(jsonObj.response.sentences[0].words[numberRan1].partOfSpeech);
-            var token2 = String(jsonObj.response.sentences[0].words[numberRan2].partOfSpeech);
-            var token3 = String(jsonObj.response.sentences[0].words[numberRan3].partOfSpeech);
-            var token4 = String(jsonObj.response.sentences[0].words[numberRan4].partOfSpeech);
+            var numberRan1 = Math.floor(Math.random() * 10);
+            var numberRan2 = Math.floor(Math.random() * 10);
+            var numberRan3 = Math.floor(Math.random() * 10);
+            var numberRan4 = Math.floor(Math.random() * 10);
+            var token1 = String(jsonObj.response.sentences[0].words[numberRan1].token);
+            var token2 = String(jsonObj.response.sentences[0].words[numberRan2].token);
+            var token3 = String(jsonObj.response.sentences[0].words[numberRan3].token);
+            var token4 = String(jsonObj.response.sentences[0].words[numberRan4].token);
 
             <!-- Finding Noun 1 -->
             for (i=0; i < jsonObj.response.sentences[0].words.length; i++) {
