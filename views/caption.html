@@ -60,7 +60,7 @@
                <!-- MENU LINKS -->
                <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                         <li><a href="#" class="smoothScroll">Create</a></li>
+                         <li><a href="#" class="smoothScroll">Caption</a></li>
                          <li><a href="#" class="smoothScroll">Hi, <%= name %></a></li>
                          <li><button type = "submit" value="Log out" data-ng-click="logout()"></button></li>
 
@@ -71,7 +71,7 @@
      </div>
 
 
-     <!-- HOME -->
+    <!-- URL+Pick Word -->
      <section id="home" class="parallax-section">
           <div class="overlay"></div>
           <div class="container">
@@ -85,7 +85,36 @@
                                         <input type="submit" data-ng-click="SubmitImage(url.text)" value="Search" style="border:none;background-color:#EC7063;height:45px;width:90px;border-radius:2px;color:#FFFFFF" >
                                    </label>
                               </form>
-                         </div>
+                         </div><div ng-show="imageSearched">
+
+                        <label style="padding-top: 20px;padding-left: 130px">
+
+                            <p><b>Pick a word</b></p>
+
+                            <input type="submit" data-ng-click="findLyrics(firstWord)" value={{firstWord}}  onclick="smoothScroll(document.getElementById('yay'))" style="border:none;background-color:#EC7063;height:45px;width:90px;border-radius:2px;color:#FFFFFF">
+                        </label>
+
+                        <label>
+
+                            <input type="submit" data-ng-click="findLyrics(secondWord)" value= {{secondWord}} onclick="smoothScroll(document.getElementById('yay'))" style="border:none;background-color:#EC7063;height:45px;width:90px;border-radius:2px;color:#FFFFFF">
+                        </label>
+
+                        <label>
+
+                            <input type="submit" data-ng-click="findLyrics(thirdWord)" value= {{thirdWord}}  onclick="smoothScroll(document.getElementById('yay'))" style="border:none;background-color:#EC7063;height:45px;width:90px;border-radius:2px;color:#FFFFFF">
+                        </label>
+
+                        <label>
+
+                            <input type="submit" data-ng-click="findLyrics(fourthWord)" value= {{fourthWord}} onclick="smoothScroll(document.getElementById('yay'))" style="border:none;background-color:#EC7063;height:45px;width:90px;border-radius:2px;color:#FFFFFF">
+                        </label>
+
+                        <label>
+
+                            <input type="submit" data-ng-click="findLyrics(fifthWord)" value= {{fifthWord}} onclick="smoothScroll(document.getElementById('yay'))" style="border:none;background-color:#EC7063;height:45px;width:90px;border-radius:2px;color:#FFFFFF">
+                        </label>
+
+                    </div>
 
                     </div>
                </div>
@@ -100,45 +129,13 @@
           </video>
      </section>
 
-    <div ng-show="imageSearched">
-
-        <label>
-            <h1>
-                {{firstWord}}
-            </h1>
-            <input type="submit" data-ng-click="findLyrics(firstWord)" value="CapTHAT!" style="border:none;background-color:#EC7063;height:45px;width:90px;border-radius:2px;color:#FFFFFF">
-        </label>
-
-        <label>
-            <h1>
-                {{secondWord}}
-            </h1>
-            <input type="submit" data-ng-click="findLyrics(secondWord)" value="CapTHAT!" style="border:none;background-color:#EC7063;height:45px;width:90px;border-radius:2px;color:#FFFFFF">
-        </label>
-
-        <label>
-            <h1>
-                {{thirdWord}}
-            </h1>
-            <input type="submit" data-ng-click="findLyrics(thirdWord)" value="CapTHAT!" style="border:none;background-color:#EC7063;height:45px;width:90px;border-radius:2px;color:#FFFFFF">
-        </label>
-
-        <label>
-            <h1>
-                {{fourthWord}}
-            </h1>
-            <input type="submit" data-ng-click="findLyrics(fourthWord)" value="CapTHAT!" style="border:none;background-color:#EC7063;height:45px;width:90px;border-radius:2px;color:#FFFFFF">
-        </label>
-
-        <label>
-            <h1>
-                {{fifthWord}}
-            </h1>
-            <input type="submit" data-ng-click="findLyrics(fifthWord)" value="CapTHAT!" style="border:none;background-color:#EC7063;height:45px;width:90px;border-radius:2px;color:#FFFFFF">
-        </label>
-
-    </div>
-
+    <!-- Get Caption -->
+    <section id="about" class="parallax-section">
+        <div class="container">
+            <div class="row">
+                <div id="yay"></div>
+                <div class="col-md-offset-1 col-md-10 col-sm-12">
+                    <div class="about-info">
 
     <!--<div ng-show="lyricsFound">-->
         <!--<h1>-->
@@ -147,6 +144,7 @@
     <!--</div>-->
 
     <div ng-show = "captionFound">
+        <h3 style="padding-top:150px;padding-bottom:150px">Here is your caption</h3>
         <!--Caption One-->
         <h1>
             I only love my {{caption[0]}} and my {{caption[1]}}, I'm sorry!
@@ -179,12 +177,13 @@
         <h1>
           You like {{caption[7]}}? Thats cute.
         </h1>
-
-
-
-
-
     </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+
 
 
      <!-- FOOTER -->
@@ -201,11 +200,12 @@
 
                     <div class="col-md-4 col-sm-6">
                          <div class="footer-info">
-                             <h2>Keep in touch</h2>
+                             <h2>Contact Us</h2>
                               <!--<p><a href="tel:010-090-0780">010-090-0780</a></p>-->
                               <p><a href="mailto:capthat_info@gmail.com">capthat_info@gmail.com</a></p>
                               <p><a href="#">Room#325, 725 Commonwealth Avenue,<br> Boston, MA 02215</a></p>
                          </div>
+
                     </div>
 
                     <!-- <div class="col-md-3 col-sm-12">
