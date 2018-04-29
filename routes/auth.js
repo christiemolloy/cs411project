@@ -61,7 +61,7 @@ router.get('/success', function (req, res, next) {
 
 
 router.get('/logout', function (req, res, next) {
-    User.findOneAndRemove({twitterID: req.user.twitterID})
+    User.findOne({twitterID: req.user.twitterID})
         .then(function (err, response) {
             req.logOut()
             res.clearCookie()
@@ -79,8 +79,10 @@ router.get('/callback',
     passport.authenticate('twitter',
         {failureRedirect: '/login',}),
     function (req, res) {
+        res.cookie('userId', res.req.user.id)
+        res.cookie('userName', res.req.user.displayName)
         res.cookie('authStatus', 'true')
-        res.redirect('../create')
+        res.render('caption', {name: res.req.user.displayName});
     })
 
 

@@ -7,8 +7,7 @@ const db = mongoose.connection
 const user = mongoose.Schema({
     name: String,
     username: String,
-    //userID: String,
-    password: String,
+    uploads: [{}],
     twitterID: String
 })
 

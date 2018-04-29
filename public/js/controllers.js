@@ -5,7 +5,8 @@ angular.module('myApp', ['ngRoute', 'ngCookies'])
 
         $scope.SubmitImage = function(input) {
             console.log("calling clarifai api");
-            $http.get('http://localhost:3000/caption/clarifai/' + encodeURIComponent(input))
+            let userid = $cookies.get('userId')
+            $http.get('http://localhost:3000/caption/clarifai/' + userid + '/' + encodeURIComponent(input))
                 .then(function(response) {
                     console.log(response);
                     console.log("clarifai api called");
@@ -63,6 +64,7 @@ angular.module('myApp', ['ngRoute', 'ngCookies'])
             $http.get('/auth/logout')
                 .then(function (response) {
                     $scope.authorized = false;
+                    window.location.replace('http://localhost:3000')
                 })
         };
 

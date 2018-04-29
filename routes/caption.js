@@ -3,6 +3,13 @@ var router = express.Router();
 
 var request = require('request');
 
+
+
+//database
+var wordLyrics = require('../models/word_lyrics');
+var User = require('../models/User')
+
+
 //Get the api key
 let Clarifai_api_key = require('../config/clarifai').CONSUMER_KEY;
 
@@ -12,15 +19,29 @@ const Clarifai_app = new Clarifai.App({
 });
 console.log("Called the caption.js")
 
-router.get('/clarifai/:name', function(req, res, next) {
+router.get('/clarifai/:user/:name', function(req, res, next) {
 
     // sample clarifai image : https://samples.clarifai.com/metro-north.jpg
 
     // predict the contents of an image by passing in a url
     let searchkey = req.params.name;
+    let userId = req.params.user;
     console.log("*****");
     console.log(req.params.name);
     console.log(searchkey);
+    User.findOneAndUpdate({twitterID: userId},
+        {
+            $addToSet: {
+                uploads: {photo: searchkey}
+            }
+        },
+        function(err, result){
+            if(err){
+                console.log(err)
+            }
+            else{
+            }
+        })
     Clarifai_app.models.predict(Clarifai.GENERAL_MODEL, searchkey).then(
         function(response) {
             console.log(JSON.stringify(response));
@@ -40,10 +61,6 @@ const Genius = require('genius-api');
 const Genius_app = new Genius(Genius_api_key);
 
 const Lyrics = require('lyric-get');
-
-
-//database
-const wordLyrics = require('../models/word_lyrics');
 
 
 //get the lyrics for the input word

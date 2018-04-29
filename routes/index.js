@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 
 /* GET caption page. */
 router.get('/caption', function(req, res, next) {
-    res.render('caption', {title: 'Caption' });
+    res.render('caption', {name: 'Guest User' });
 });
 
 
