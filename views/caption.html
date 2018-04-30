@@ -85,7 +85,7 @@
                               <form name="myForm">
                                    <label style="color:#ffffff;text-align:left;font-size:20px">Please enter the image URL:<br>
                                         <input type="url" name="input" data-ng-model="url.text" required style=border:none;width:400px;height:45px;border-radius:2px;color:darkgrey;padding:20px>
-                                        <input type="submit" data-ng-click="SubmitImage(url.text)" value="Search" style="border:none;background-color:#EC7063;height:45px;width:90px;border-radius:2px;color:#FFFFFF" >
+                                        <input type="submit" data-ng-click="SubmitImage(url.text)" value="Search" style="border:none;background-color:#EC7063;height:45px;width:90px;border-radius:2px;color:#FFFFFF">
                                    </label>
                               </form>
                          </div><div ng-show="imageSearched">
@@ -144,21 +144,21 @@
                         <div ng-show = "captionFound">
                             <h3 style="padding-top:100px;padding-bottom:100px">Here is your caption</h3>
 
-                            <!--Caption One-->
+                            <!--Caption-->
                             <h1>
                                 {{cap}}
                             </h1>
 
                             <div>
                                 <div ng-hide="finishedCaptions">
-                                    <input type="submit" data-ng-click="changeCaption()" value="Change Caption" ng-show="captionFound" />
+                                    <input type="submit" data-ng-click="changeCaption()" value="Change Caption" ng-show="captionFound" style="border:none;background-color:#EC7063;height:45px;width:90px;border-radius:2px;color:#FFFFFF";/>
                                 </div>
 
 
 
 
                             <div ng-show="finishedCaptions">
-                                <h1> NO MORE CAPTIONS FOUND :( </h1>
+                                <h1> We're Sorry! There's no more captions! </h1>
                                 <input type="submit" data-ng-click="noMoreCaptions()" value="Go back to first caption!" />
                                 <input type="submit" onclick="smoothScroll(document.getElementById('getHere'))" value="Try another word" />
                             </div>
