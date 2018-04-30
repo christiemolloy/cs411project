@@ -48,6 +48,7 @@
 
                <!-- NAVBAR HEADER -->
                <div class="navbar-header">
+                 <div id="getHere"></div>
                     <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                          <span class="icon icon-bar"></span>
                          <span class="icon icon-bar"></span>
@@ -59,6 +60,7 @@
 
                <!-- MENU LINKS -->
                <div class="collapse navbar-collapse">
+
                     <ul class="nav navbar-nav navbar-right">
                          <li><a href="#" class="smoothScroll">Caption</a></li>
                          <li><a href="#" class="smoothScroll">Hi, <%= name %></a></li>
@@ -75,6 +77,7 @@
      <section id="home" class="parallax-section">
           <div class="overlay"></div>
           <div class="container">
+
                <div class="row">
 
                     <div class="col-md-8 col-sm-12">
@@ -82,7 +85,7 @@
                               <form name="myForm">
                                    <label style="color:#ffffff;text-align:left;font-size:20px">Please enter the image URL:<br>
                                         <input type="url" name="input" data-ng-model="url.text" required style=border:none;width:400px;height:45px;border-radius:2px;color:darkgrey;padding:20px>
-                                        <input type="submit" data-ng-click="SubmitImage(url.text)" value="Search" style="border:none;background-color:#EC7063;height:45px;width:90px;border-radius:2px;color:#FFFFFF" >
+                                        <input type="submit" data-ng-click="SubmitImage(url.text)" value="Search" style="border:none;background-color:#EC7063;height:45px;width:90px;border-radius:2px;color:#FFFFFF">
                                    </label>
                               </form>
                          </div><div ng-show="imageSearched">
@@ -141,26 +144,27 @@
                         <div ng-show = "captionFound">
                             <h3 style="padding-top:100px;padding-bottom:100px">Here is your caption</h3>
 
-                            <!--Caption One-->
+                            <!--Caption-->
                             <h1>
                                 {{cap}}
                             </h1>
 
                             <div>
                                 <div ng-hide="finishedCaptions">
-                                    <input type="submit" data-ng-click="changeCaption()" value="Change Caption" ng-show="captionFound" />
+                                    <input type="submit" data-ng-click="changeCaption()" value="Change Caption" ng-show="captionFound" style="margin-top:40px;border:none;font-size:16pt;padding:5px; background-color:#EC7063;height:45px;width:175px;border-radius:2px;color:#FFFFFF";/>
                                 </div>
 
 
-                                <div ng-show="finishedCaptions">
-                                    <h1> NO MORE CAPTIONS FOUND :( </h1>
-                                    <input type="submit" data-ng-click="noMoreCaptions()" value="Go back to first caption!" />
-                                    <input type="submit" data-ng-click="" value="Try another word" />
-                                </div>
 
-                                <div>
-                                    <input type="submit" data-ng-click="saveCaption()" value="Save this caption" />
-                                </div>
+
+                            <div ng-show="finishedCaptions">
+                                <h1> We're Sorry! There's no more captions! </h1>
+                                <input type="submit" data-ng-click="noMoreCaptions()" value="Go back to first caption!" />
+                                <input type="submit" onclick="smoothScroll(document.getElementById('getHere'))" value="Try another word" />
+                            </div>
+
+                            <div>
+                                <input type="submit" data-ng-click="saveCaption()" value="Save this caption" style="margin-top: 80px;border:none;background-color:#8A84E2;height:45px;font-size:16pt; width:200px;border-radius:2px;color:#FFFFFF"/>
                             </div>
 
                             <div ng-show = "wordNotFound">
@@ -182,6 +186,7 @@
      <!-- FOOTER -->
      <footer>
           <div class="container">
+
                <div class="row">
 
                     <div class="col-md-5 col-sm-6">
