@@ -267,11 +267,11 @@ router.get('/lyrics/:name', function(req,res,next){
 
             var string1 = "I only love my " + token1 + " and my " + token2 + ", I'm sorry!";
             var string2 = "That face when you look at " + token3 + "!";
-            var string3 = "My favorite " + token4;
-            var string4 = "I'm here for a good time not " + token5;
-            var string5 = "Know yourself, know your " + token6;
-            var string6 = "I'm way up, I feel " + token2;
-            var string7 = "You think this is a " + token7;
+            var string3 = "My favorite " + token4 + ".";
+            var string4 = "I'm here for a good time not " + token5 + ".";
+            var string5 = "Know yourself, know your " + token6 + ".";
+            var string6 = "I'm way up, I feel " + token2 + ".";
+            var string7 = "You think this is a " + token7 + ".";
             var string8 = "You like " + token8 + "?" + "Thats cute.";
 
 
