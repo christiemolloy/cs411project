@@ -4,6 +4,7 @@ angular.module('myApp', ['ngRoute', 'ngCookies'])
         $scope.imageSearched = false;
 
         $scope.SubmitImage = function(input) {
+            $scope.saveButton = "Save this caption"
             $scope.imageLink = input;
             console.log("calling clarifai api");
             let userid = $cookies.get('userId')
@@ -63,6 +64,7 @@ angular.module('myApp', ['ngRoute', 'ngCookies'])
         };
 
         $scope.changeCaption = function() {
+            $scope.saveButton = "Save this caption"
             $scope.i += 1;
             $scope.cap = $scope.caption[$scope.i];
             console.log($scope.i);
