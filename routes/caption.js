@@ -19,6 +19,10 @@ const Clarifai_app = new Clarifai.App({
 });
 console.log("Called the caption.js")
 
+
+
+
+
 router.get('/clarifai/:user/:name', function(req, res, next) {
 
     // sample clarifai image : https://samples.clarifai.com/metro-north.jpg
