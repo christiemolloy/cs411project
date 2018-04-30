@@ -157,9 +157,9 @@
                             <div ng-show="finishedCaptions">
                                 <h1> NO MORE CAPTIONS FOUND :( </h1>
                                 <input type="submit" data-ng-click="noMoreCaptions()" value="Go back to first caption!" />
-                                <input type="submit" data-ng-click="" value="Try another word" />
+                                <input type="submit" onclick="smoothScroll(document.getElementById('getHere'))" value="Try another word" />
                             </div>
-                            
+
                             <div>
                                 <input type="submit" data-ng-click="saveCaption()" value="Save this caption" />
                             </div>
