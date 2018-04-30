@@ -11,8 +11,6 @@ angular.module('myApp', ['ngRoute', 'ngCookies'])
                 .then(function(response) {
                     console.log(response);
                     console.log("clarifai api called");
-                    $scope.userid = userid;
-                    $scope.imageurl = input;
                     $scope.imageSearched = true;
                     $scope.firstWord = response.data[0].name;
                     $scope.secondWord = response.data[1].name;
@@ -26,7 +24,7 @@ angular.module('myApp', ['ngRoute', 'ngCookies'])
         $scope.captionFound = false;
         $scope.wordNotFound = false;
 
-        $scope.findLyrics = function(input) {;
+        $scope.findLyrics = function(input) {
             console.log("calling genius api");
             $http.get('http://localhost:3000/caption/genius/' + input)
                 .then(function(response) {
@@ -80,17 +78,7 @@ angular.module('myApp', ['ngRoute', 'ngCookies'])
         };
 
 
-        $scope.saveCaption = function(caption, image, user) {
-
-            console.log("calling save caption");
-            console.log("caption is");
-            console.log(caption);
-            $http.get('http://localhost:3000/profile/' + caption + '/' + user +  '/'+ encodeURIComponent(image))
-                .then(function(response){
-                    window.location.replace('http://localhost:3000/profile');
-                }, function (error) {
-                    // not relevant
-                })
+        $scope.saveCaption = function() {
 
         };
 
@@ -168,4 +156,3 @@ angular.module('myApp', ['ngRoute', 'ngCookies'])
     //                 controller: 'controllers'
     //             })
     //     }]);
-

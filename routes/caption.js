@@ -147,10 +147,10 @@ router.get('/lyrics/:name', function(req,res,next){
         if (!error && response.statusCode == 200) {
             console.log("text razor working...");
             var jsonObj = JSON.parse(response.body);
-            var numberRan1 = Math.floor(Math.random() * 10);
-            var numberRan2 = Math.floor(Math.random() * 10);
-            var numberRan3 = Math.floor(Math.random() * 10);
-            var numberRan4 = Math.floor(Math.random() * 10);
+            var numberRan1 = Math.floor(Math.random() * 1);
+            var numberRan2 = Math.floor(Math.random() * 1);
+            var numberRan3 = Math.floor(Math.random() * 1);
+            var numberRan4 = Math.floor(Math.random() * 1);
             var token1 = String(jsonObj.response.sentences[0].words[numberRan1].token);
             var token2 = String(jsonObj.response.sentences[0].words[numberRan2].token);
             var token3 = String(jsonObj.response.sentences[0].words[numberRan3].token);
@@ -251,7 +251,7 @@ router.get('/lyrics/:name', function(req,res,next){
             for (i=0; i < jsonObj.response.sentences[0].words.length; i++) {
               console.log("hi" + jsonObj.response.sentences[0].words[i].partOfSpeech);
               if(jsonObj.response.sentences[0].words[i].partOfSpeech === "VB" || jsonObj.response.sentences[0].words[i].partOfSpeech === "VBD" || jsonObj.response.sentences[0].words[i].partOfSpeech === "VBG" || jsonObj.response.sentences[0].words[i].partOfSpeech === "VBN" || jsonObj.response.sentences[0].words[i].partOfSpeech === "VBZ") {
-                if(jsonObj.response.sentences[0].words[i].token != token7) {
+                if(jsonObj.response.sentences[0].words[i].token != token1) {
                 token8 = jsonObj.response.sentences[0].words[i].token;
               }
               else {
