@@ -61,8 +61,8 @@
                <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                          <li><a href="#" class="smoothScroll">Caption</a></li>
-                         <li><a href="../profile" class="smoothScroll">Hi, <%= name %></a></li>
-                        <li><button type="submit" value="Log out" data-ng-click="logout()" style="border:none;padding: 0 25px;color:#FFFFFF;background-color:#EC7063;height:50px;font-size: 10pt;border-radius:3px;">LOG OUT</button></li>
+                         <li><a href="#" class="smoothScroll">Hi, <%= name %></a></li>
+                         <li><button type = "submit" value="Log out" data-ng-click="logout()"></button></li>
 
                     </ul>
                </div>
@@ -133,7 +133,7 @@
     <section id="about" class="parallax-section">
         <div class="container">
             <div class="row">
-
+                <div id="yay"></div>
                 <div class="col-md-offset-1 col-md-10 col-sm-12">
                     <div class="about-info">
 
@@ -144,7 +144,6 @@
     <!--</div>-->
 
     <div ng-show = "captionFound">
-        <div id="yay"></div>
         <h3 style="padding-top:150px;padding-bottom:150px">Here is your caption</h3>
         <!--Caption One-->
         <h1>

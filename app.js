@@ -13,7 +13,7 @@ var captionRouter = require('./routes/caption');
 var usersRouter = require('./routes/users');
 //var imageRouter = require('./routes/image');
 var authRouter = require('./routes/auth');
-var profileRouter = require('./routes/profile');
+//var profileRouter = require('./routes/profile');
 var app = express();
 
 // view engine setup
@@ -48,7 +48,6 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/auth', authRouter);
 app.use('/caption', captionRouter);
-app.use('/profile', profileRouter);
 
 
 // catch 404 and forward to error handler
@@ -66,7 +65,6 @@ app.use(function(err, req, res, next) {
 
   res.status(err.status || 500);
   res.render('error');
-  console.log(err.message);
 
 
 });

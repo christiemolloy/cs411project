@@ -17,11 +17,6 @@ router.get('/caption', function(req, res, next) {
     res.render('caption', {name: 'Guest User' });
 });
 
-/* GET profile page. */
-router.get('/profile', function(req, res, next) {
-    res.render('profile', {title: 'profile' });
-});
-
 
 /* GET twitter user profile page. */
 router.get('/profileT', function(req, res, next) {
