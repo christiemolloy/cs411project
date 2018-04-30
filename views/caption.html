@@ -155,14 +155,14 @@
 
                             <div>
                                 <div ng-hide="finishedCaptions">
-                                    <input type="submit" data-ng-click="changeCaption()" value="Change Caption" ng-show="captionFound" style="margin-top:40px;border:none;font-size:16pt;padding:5px; background-color:#EC7063;height:45px;width:175px;border-radius:2px;color:#FFFFFF";/>
+                                    <input type="submit" data-ng-click="changeCaption()" value="Change Caption" ng-show="captionFound" style="margin-top:40px;border:none;font-size:16pt;padding:5px;border-style:solid;background-color:#EC7063;height:45px;width:175px;border-radius:2px;color:#FFFFFF";/>
                                 </div>
 
 
                                 <div ng-show="finishedCaptions">
                                     <h1> We're Sorry! There's no more captions! </h1>
-                                    <input type="submit" data-ng-click="noMoreCaptions()" value="Go back to first caption!" />
-                                    <input type="submit" onclick="smoothScroll(document.getElementById('getHere'))" value="Try another word" />
+                                    <input type="submit" data-ng-click="noMoreCaptions()" value="Go back to first caption!" style="margin-top:40px;border:none;font-size:16pt;padding:5px; border-style:solid;border-color:#EC7063;height:45px;width:225px;border-radius:2px;color:#EC7063" />
+                                    <input type="submit" onclick="smoothScroll(document.getElementById('getHere'))" value="Try another word" style="margin-top:40px;border:none;font-size:16pt;padding:5px; border-style:solid;border-color:#EC7063;height:45px;width:200px;border-radius:2px;color:#EC7063" />
                                 </div>
 
                                 <div>
@@ -186,13 +186,13 @@
 
 
      <!-- FOOTER -->
-     <footer>
+     <footer  style="background-color:lightgrey; padding-top:100px; padding-bottom:100px;">
           <div class="container">
 
                <div class="row">
 
                     <div class="col-md-5 col-sm-6">
-                         <h2>BostonU </h2>
+                         <h2><b>Boston University</b></h2>
                          <p>CS411<br> Team11</p>
 
 
@@ -200,7 +200,7 @@
 
                     <div class="col-md-4 col-sm-6">
                          <div class="footer-info">
-                             <h2>Contact Us</h2>
+                             <h2><b>Contact Us</b></h2>
                               <!--<p><a href="tel:010-090-0780">010-090-0780</a></p>-->
                               <p><a href="mailto:capthat_info@gmail.com">capthat_info@gmail.com</a></p>
                               <p><a href="#">Room#325, 725 Commonwealth Avenue,<br> Boston, MA 02215</a></p>
