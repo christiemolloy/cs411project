@@ -14,13 +14,13 @@ router.get('/', function(req, res, next) {
 
 /* GET caption page. */
 router.get('/caption', function(req, res, next) {
-    res.render('caption', {name: 'Guest User' });
+    res.render('caption', {name: 'Guest User', authStatus: false });
 });
 
 
 /* GET twitter user profile page. */
-router.get('/profileT', function(req, res, next) {
-    res.render('profileT', { title: 'ProfileT' });
+router.get('/profile', function(req, res, next) {
+    res.render('profile', { name: 'user'});
 });
 
 
@@ -30,10 +30,8 @@ router.get('/image', function(req, res, next) {
 });
 
 
-/* GET lyrics page. */
-router.get('/lyrics', function(req, res, next) {
-    res.render('lyrics', { title: 'Search lyrics' });
-});
+
+
 
 
 

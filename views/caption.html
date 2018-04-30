@@ -48,6 +48,7 @@
 
                <!-- NAVBAR HEADER -->
                <div class="navbar-header">
+                 <div id="getHere"></div>
                     <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                          <span class="icon icon-bar"></span>
                          <span class="icon icon-bar"></span>
@@ -59,10 +60,14 @@
 
                <!-- MENU LINKS -->
                <div class="collapse navbar-collapse">
+
                     <ul class="nav navbar-nav navbar-right">
-                         <li><a href="#" class="smoothScroll">Caption</a></li>
-                         <li><a href="#" class="smoothScroll">Hi, <%= name %></a></li>
-                         <li><button type = "submit" value="Log out" data-ng-click="logout()"></button></li>
+                         <!--<li><a href="#" class="smoothScroll">Caption</a></li>-->
+
+                         <li class="smoothScroll">Hi, <%= name %></li>
+                        <!-- Made this no longer a link as we don't have a "profile" page -->
+
+                         <li><button type = "submit" ng-show= "<%= authStatus %>" data-ng-click="logout()" value="Log out"></button></li>
 
                     </ul>
                </div>
@@ -75,19 +80,20 @@
      <section id="home" class="parallax-section">
           <div class="overlay"></div>
           <div class="container">
+
                <div class="row">
 
-                    <div class="col-md-8 col-sm-12">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
                          <div class="blank">
                               <form name="myForm">
                                    <label style="color:#ffffff;text-align:left;font-size:20px">Please enter the image URL:<br>
                                         <input type="url" name="input" data-ng-model="url.text" required style=border:none;width:400px;height:45px;border-radius:2px;color:darkgrey;padding:20px>
-                                        <input type="submit" data-ng-click="SubmitImage(url.text)" value="Search" style="border:none;background-color:#EC7063;height:45px;width:90px;border-radius:2px;color:#FFFFFF" >
+                                        <input type="submit" data-ng-click="SubmitImage(url.text)" value="Search" style="border:none;background-color:#EC7063;height:45px;width:90px;border-radius:2px;color:#FFFFFF">
                                    </label>
                               </form>
-                         </div><div ng-show="imageSearched">
+                         </div><div ng-show="imageSearched" class="col-lg-12" style="text-align:center">
 
-                        <label style="padding-top: 20px;padding-left: 130px">
+                        <label style="padding-top: 20px;">
 
                             <p><b>Pick a word</b></p>
 
@@ -130,69 +136,86 @@
      </section>
 
     <!-- Get Caption -->
+    <div id="yay"></div>
     <section id="about" class="parallax-section">
+
         <div class="container">
             <div class="row">
-                <div id="yay"></div>
+
                 <div class="col-md-offset-1 col-md-10 col-sm-12">
                     <div class="about-info">
 
-    <!--<div ng-show="lyricsFound">-->
-        <!--<h1>-->
-            <!--{{lyrics}}-->
-        <!--</h1>-->
-    <!--</div>-->
 
-    <div ng-show = "captionFound">
-        <h3 style="padding-top:150px;padding-bottom:150px">Here is your caption</h3>
-        <!--Caption One-->
-        <h1>
-            I only love my {{caption[0]}} and my {{caption[1]}}, I'm sorry!
-        </h1>
-        <!--Caption Two-->
-        <h1>
-            That face when you {{caption[7]}} at {{caption[2]}}!
-        </h1>
-        <!--Caption Three-->
-        <h1>
-            My favorite {{caption[3]}}
-        </h1>
-        <!--Caption Four-->
-        <h1>
-            I'm here for a good time not {{caption[4]}}
-        </h1>
-        <!--Caption Five-->
-        <h1>
-            Know yourself, know your {{caption[5]}}
-        </h1>
-        <!--Caption six-->
-        <h1>
-            I'm way up, I feel {{caption[1]}}
-        </h1>
-        <!--Caption Seven-->
-        <h1>
-          You think this is a {{caption[6]}} ?
-        </h1>
-        <!--Caption Eight-->
-        <h1>
-          You like {{caption[7]}}? Thats cute.
-        </h1>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
+                        <div ng-show = "captionFound">
+                            <h3 style="padding-top:20px;padding-bottom:20px">Here is your caption</h3>
+
+
+                            <!-- Image -->
+                            <div >
+                                <img style="width:50%; height:50%;" ng-src= {{imageLink}} alt="image link"/>
+                            </div>
+
+                            <!--Caption-->
+                            <h1 style="margin-:20pt;">
+                                {{cap}}
+                            </h1>
+
+
+
+                            <div>
+                                <div ng-hide="finishedCaptions">
+                                    <input type="submit" data-ng-click="changeCaption()" value="Change Caption" ng-show="captionFound" style="margin-top:40px;border:none;font-size:16pt;padding:5px;border-style:solid;background-color:#EC7063;height:45px;width:200px;border-radius:3px;color:#FFFFFF";/>
+                                </div>
+
+
+                                <div ng-show="finishedCaptions">
+                                    <h1> We're Sorry! There's no more captions! </h1>
+                                    <input type="submit" data-ng-click="noMoreCaptions()" value="Go back to first caption!" style="margin-top:40px;border:none;font-size:16pt;padding:5px; border-style:solid;border-color:#EC7063;height:45px;width:250px;border-radius:3px;color:#EC7063" />
+                                    <input type="submit" onclick="smoothScroll(document.getElementById('getHere'))" value="Try another word" style="margin-top:40px;border:none;font-size:16pt;padding:5px; border-style:solid;border-color:#EC7063;height:45px;width:200px;border-radius:3px;color:#EC7063" />
+                                </div>
+
+                                <div>
+                                    <input type="submit" ng-show= "<%= authStatus %>" data-ng-click="saveCaption(cap, imageurl, userid)" value="{{saveButton}}" />
+                                </div>
+
+                                <div>
+                                    <input type="submit" ng-show= "<%= authStatus %>" data-ng-click="showPastCaptions(<%= authStatus %>)" value="Show past captions" onclick="smoothScroll(document.getElementById('oldCaptions'))"/>
+                                </div>
+
+                                <div id="oldCaptions"></div>
+                                <div ng-show="gotData">
+                                    <div ng-repeat="upload in uploads">
+                                        <img ng-src= {{upload.photo}} alt="photo"/>
+                                        {{upload.caption}}
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div ng-show = "wordNotFound">
+                            <h1> Sorry, no captions found for that word...</h1>
+                            <input type="submit" onclick="smoothScroll(document.getElementById('getHere'))" value="Try another word" style="margin-top:40px;border:none;font-size:16pt;padding:5px;background-color:#6247AA;height:45px;width:200px;border-radius:2px;color:#FFFFFF" />
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
 
 
      <!-- FOOTER -->
-     <footer>
+     <footer  style="background-color:lightgrey; padding-top:100px; padding-bottom:100px;">
           <div class="container">
+
                <div class="row">
 
                     <div class="col-md-5 col-sm-6">
-                         <h2>BostonU </h2>
+                         <h2><b>Boston University</b></h2>
                          <p>CS411<br> Team11</p>
 
 
@@ -200,7 +223,7 @@
 
                     <div class="col-md-4 col-sm-6">
                          <div class="footer-info">
-                             <h2>Contact Us</h2>
+                             <h2><b>Contact Us</b></h2>
                               <!--<p><a href="tel:010-090-0780">010-090-0780</a></p>-->
                               <p><a href="mailto:capthat_info@gmail.com">capthat_info@gmail.com</a></p>
                               <p><a href="#">Room#325, 725 Commonwealth Avenue,<br> Boston, MA 02215</a></p>

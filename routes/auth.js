@@ -82,7 +82,7 @@ router.get('/callback',
         res.cookie('userId', res.req.user.id)
         res.cookie('userName', res.req.user.displayName)
         res.cookie('authStatus', 'true')
-        res.render('caption', {name: res.req.user.displayName});
+        res.render('caption', {name: res.req.user.displayName, authStatus: true});
     })
 
 
