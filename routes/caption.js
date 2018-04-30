@@ -168,12 +168,15 @@ router.get('/lyrics/:name', function(req,res,next){
               if(jsonObj.response.sentences[0].words[i].partOfSpeech === "NN" || jsonObj.response.sentences[0].words[i].partOfSpeech === "NNS") {
                 if(jsonObj.response.sentences[0].words[i].token != token1) {
                   token2 = jsonObj.response.sentences[0].words[i].token;
-                };
+                }
               }
               else {
                 i++;
-
+                if(jsonObj.response.sentences[0].words[jsonObj.response.sentences[0].words.length-2].partOfSpeech != "NN" && jsonObj.response.sentences[0].words[i].partOfSpeech != "NNS") {
+                  token2 = token1;
+                }
               }
+
             }
 
             <!-- Finding Noun3-->
@@ -182,11 +185,15 @@ router.get('/lyrics/:name', function(req,res,next){
               if(jsonObj.response.sentences[0].words[i].partOfSpeech === "NN" || jsonObj.response.sentences[0].words[i].partOfSpeech === "NNS") {
                 if(jsonObj.response.sentences[0].words[i].token != token1 && jsonObj.response.sentences[0].words[i].token != token2) {
                   token3 = jsonObj.response.sentences[0].words[i].token;
-                };
+                }
               }
-              else {
-                i++;
+                else {
+                  i++;
+                  if(jsonObj.response.sentences[0].words[jsonObj.response.sentences[0].words.length-2].partOfSpeech != "NN" && jsonObj.response.sentences[0].words[i].partOfSpeech != "NNS") {
+                    token3 = token1;
+                  }
               }
+
             }
 
             <!-- Finding Noun4-->
@@ -199,60 +206,100 @@ router.get('/lyrics/:name', function(req,res,next){
               }
               else {
                 i++;
+                if(jsonObj.response.sentences[0].words[jsonObj.response.sentences[0].words.length-2].partOfSpeech != "NN" && jsonObj.response.sentences[0].words[i].partOfSpeech != "NNS") {
+                  token4 = token1;
+                }
               }
+
             }
 
             <!-- Finding Noun5-->
             for (i=0; i < jsonObj.response.sentences[0].words.length; i++) {
               console.log("hi" + jsonObj.response.sentences[0].words[i].partOfSpeech);
-              if(jsonObj.response.sentences[0].words[i].partOfSpeech === "NN" || jsonObj.response.sentences[0].words[i].partOfSpeech === "NNS") {
+              if(jsonObj.response.sentences[0].words[i].partOfSpeech === "NN" || jsonObj.response.sentences[0].words[i].partOfSpeech === "NNS" || jsonObj.response.sentences[0].words[i].partOfSpeech === "NNP" || jsonObj.response.sentences[0].words[i].partOfSpeech === "NNPS") {
                 if(jsonObj.response.sentences[0].words[i].token != token1 && jsonObj.response.sentences[0].words[i].token != token2 && jsonObj.response.sentences[0].words[i].token != token3 && jsonObj.response.sentences[0].words[i].token != token4) {
-                  console.log("this is token5 for dog" + jsonObj.response.sentences[0].words[i].token)
                   token5 = jsonObj.response.sentences[0].words[i].token;
-                };
+                  console.log("this is token5" + token5);
+                  if (token5 === "undefined") {
+                    console.log("HELLO");
+                  }
+                  };
+                }
+                else {
+                  i++;
+                  if(jsonObj.response.sentences[0].words[jsonObj.response.sentences[0].words.length-2].partOfSpeech != "NN" && jsonObj.response.sentences[0].words[i].partOfSpeech != "NNS") {
+                    token5 = "hi";
+                  }
               }
-              else {
-                i++;
-              }
+
+
             }
 
             <!-- Finding Noun6-->
             for (i=0; i < jsonObj.response.sentences[0].words.length; i++) {
               console.log("hi" + jsonObj.response.sentences[0].words[i].partOfSpeech);
-              if(jsonObj.response.sentences[0].words[i].partOfSpeech === "NN" || jsonObj.response.sentences[0].words[i].partOfSpeech === "NNS") {
+              if(jsonObj.response.sentences[0].words[i].partOfSpeech === "NN" || jsonObj.response.sentences[0].words[i].partOfSpeech === "NNS" || jsonObj.response.sentences[0].words[i].partOfSpeech === "NNP" || jsonObj.response.sentences[0].words[i].partOfSpeech === "NNPS") {
                 if(jsonObj.response.sentences[0].words[i].token != token1 && jsonObj.response.sentences[0].words[i].token != token2 && jsonObj.response.sentences[0].words[i].token != token3 && jsonObj.response.sentences[0].words[i].token != token4 && jsonObj.response.sentences[0].words[i].token != token5) {
                   token6 = jsonObj.response.sentences[0].words[i].token;
                 };
+                }
+                else {
+                  i++;
+                  if(jsonObj.response.sentences[0].words[jsonObj.response.sentences[0].words.length-2].partOfSpeech != "NN" && jsonObj.response.sentences[0].words[i].partOfSpeech != "NNS") {
+                    token6 = token1;
+                  }
               }
-              else {
-                i++;
-              }
+
             }
 
-            <!-- Finding Noun7-->
-            for (i=0; i < jsonObj.response.sentences[0].words.length; i++) {
-              console.log("hi" + jsonObj.response.sentences[0].words[i].partOfSpeech);
-              if(jsonObj.response.sentences[0].words[i].partOfSpeech === "NN" || jsonObj.response.sentences[0].words[i].partOfSpeech === "NNS") {
-                if(jsonObj.response.sentences[0].words[i].token != token1 && jsonObj.response.sentences[0].words[i].token != token2 && jsonObj.response.sentences[0].words[i].token != token3 && jsonObj.response.sentences[0].words[i].token != token4 && jsonObj.response.sentences[0].words[i].token != token5 && jsonObj.response.sentences[0].words[i].token != token6) {
-                  token7 = jsonObj.response.sentences[0].words[i].token;
-                };
-              }
-              else {
-                i++;
-              }
-            }
+            // <!-- Finding Noun7-->
+            // for (i=0; i < jsonObj.response.sentences[0].words.length; i++) {
+            //   //console.log("hi" + jsonObj.response.sentences[0].words[i].partOfSpeech);
+            //   if(jsonObj.response.sentences[0].words[i].partOfSpeech === "NN" || jsonObj.response.sentences[0].words[i].partOfSpeech === "NNS" || jsonObj.response.sentences[0].words[i].partOfSpeech === "NNP" || jsonObj.response.sentences[0].words[i].partOfSpeech === "NNPS" || ) {
+            //
+            //     if(jsonObj.response.sentences[0].words[i].token != token1 && jsonObj.response.sentences[0].words[i].token != token2 && jsonObj.response.sentences[0].words[i].token != token3 && jsonObj.response.sentences[0].words[i].token != token4 && jsonObj.response.sentences[0].words[i].token != token5 && jsonObj.response.sentences[0].words[i].token != token6) {
+            //       console.log("does it get here 7");
+            //       token7 = jsonObj.response.sentences[0].words[i].token;
+            //       if(token7 === undefined || token7 === null) {
+            //         token7 = token1;
+            //       }
+            //     };
+            //     }
+            //     else {
+            //       i++;
+            //       if(jsonObj.response.sentences[0].words[jsonObj.response.sentences[0].words.length-2].partOfSpeech != "NN" && jsonObj.response.sentences[0].words[i].partOfSpeech != "NNS") {
+            //         token7 = token1;
+            //         }
+            //     }
+            //
+            // }
 
 
             <!-- Finding Verb1 -->
             for (i=0; i < jsonObj.response.sentences[0].words.length; i++) {
               console.log("hi" + jsonObj.response.sentences[0].words[i].partOfSpeech);
               if(jsonObj.response.sentences[0].words[i].partOfSpeech === "VB" || jsonObj.response.sentences[0].words[i].partOfSpeech === "VBD" || jsonObj.response.sentences[0].words[i].partOfSpeech === "VBG" || jsonObj.response.sentences[0].words[i].partOfSpeech === "VBN" || jsonObj.response.sentences[0].words[i].partOfSpeech === "VBZ") {
-                token8 = jsonObj.response.sentences[0].words[i].token;
+                token7 = jsonObj.response.sentences[0].words[i].token;
+
               }
               else {
                 i++;
               }
             }
+
+            <!-- Finding Verb2 -->
+            for (i=0; i < jsonObj.response.sentences[0].words.length; i++) {
+              console.log("hi" + jsonObj.response.sentences[0].words[i].partOfSpeech);
+              if(jsonObj.response.sentences[0].words[i].partOfSpeech === "VB" || jsonObj.response.sentences[0].words[i].partOfSpeech === "VBD" || jsonObj.response.sentences[0].words[i].partOfSpeech === "VBG" || jsonObj.response.sentences[0].words[i].partOfSpeech === "VBN" || jsonObj.response.sentences[0].words[i].partOfSpeech === "VBZ") {
+                if(jsonObj.response.sentences[0].words[i].token != token7) {
+                token8 = jsonObj.response.sentences[0].words[i].token;
+
+              }
+              else {
+                i++;
+              }
+            }
+          }
 
             var string1 = "I only love my " + token1 + " and my " + token2 + ", I'm sorry!";
             var string2 = "That face when you look at " + token3 + "!";
