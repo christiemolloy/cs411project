@@ -12,6 +12,8 @@ angular.module('myApp', ['ngRoute', 'ngCookies'])
                     console.log(response);
                     console.log("clarifai api called");
                     $scope.imageSearched = true;
+                    $scope.userid = userid;
+                    $scope.imageurl = $scope.imageLink;
                     $scope.firstWord = response.data[0].name;
                     $scope.secondWord = response.data[1].name;
                     $scope.thirdWord = response.data[2].name;
@@ -78,6 +80,7 @@ angular.module('myApp', ['ngRoute', 'ngCookies'])
         };
 
 
+        $scope.saveButton = "Save this caption";
         $scope.saveCaption = function(caption, image, user) {
 
             console.log("calling save caption");
@@ -90,12 +93,13 @@ angular.module('myApp', ['ngRoute', 'ngCookies'])
                 }, function (error) {
                     // not relevant
                 })
+            $scope.saveButton = "Caption saved.";
         };
 
 
         $scope.gotData = false;
-        
         $scope.displayOldPhotos = false;
+
         $scope.showPastCaptions = function(input) {
             console.log(input)
             if(input == true) {
@@ -105,7 +109,9 @@ angular.module('myApp', ['ngRoute', 'ngCookies'])
                     .then(function(response){
                         $scope.gotData = true;
                         $scope.user = response.data;
+                        console.log($scope.user);
                         $scope.uploads = $scope.user.uploads;
+                        console.log($scope.uploads);
 
                     })
             }
@@ -175,16 +181,6 @@ angular.module('myApp', ['ngRoute', 'ngCookies'])
 
 
 
-
-
-
     });
 
-    // .config(['$routeProvider',
-    //     function ($routeProvider) {
-    //         $routeProvider
-    //             .when('/', {
-    //                 templateUrl: '../index',
-    //                 controller: 'controllers'
-    //             })
-    //     }]);
+
