@@ -93,6 +93,7 @@ router.get('/genius/:name', function(req, res, next) {
                     Lyrics.get(artist, title, function(err, results) {
                         if(err) {
                             console.log(err);
+                            res.send("error");
                         }
                         else {
                             console.log("Called the lyrics API");

@@ -20,18 +20,28 @@ angular.module('myApp', ['ngRoute', 'ngCookies'])
         };
 
 
-        //$scope.lyricsFound = false;
         $scope.captionFound = false;
+        $scope.wordNotFound = false;
 
         $scope.findLyrics = function(input) {
             console.log("calling genius api");
             $http.get('http://localhost:3000/caption/genius/' + input)
                 .then(function(response) {
                     console.log(response);
+
+                    if(response.data == "error") {
+                        $scope.lyrics = "";
+                        $scope.wordNotFound = true;
+                        // insert pop up
+                    }
+                    else {
+                        $scope.lyrics = response.data;
+                    }
+
                     console.log("genius api called");
-                    //$scope.lyricsFound = true;
-                    $scope.lyrics = response.data;
+
                 })
+
                 .then(function() {
                     console.log("calling text razor");
                     $http.get('http://localhost:3000/caption/lyrics/' + $scope.lyrics)
