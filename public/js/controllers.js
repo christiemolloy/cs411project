@@ -4,6 +4,7 @@ angular.module('myApp', ['ngRoute', 'ngCookies'])
         $scope.imageSearched = false;
 
         $scope.SubmitImage = function(input) {
+            $scope.imageLink = input;
             console.log("calling clarifai api");
             let userid = $cookies.get('userId')
             $http.get('http://localhost:3000/caption/clarifai/' + userid + '/' + encodeURIComponent(input))
@@ -22,18 +23,32 @@ angular.module('myApp', ['ngRoute', 'ngCookies'])
         };
 
 
-        //$scope.lyricsFound = false;
         $scope.captionFound = false;
+        $scope.wordNotFound = false;
 
         $scope.findLyrics = function(input) {;
             console.log("calling genius api");
             $http.get('http://localhost:3000/caption/genius/' + input)
                 .then(function(response) {
                     console.log(response);
+
+                    if(response.data == "error") {
+                        $scope.captionFound = false;
+                        $scope.wordNotFound = true;
+                        $scope.lyrics = "";
+                        console.log("word is not found");
+                        // insert pop up
+                    }
+                    else {
+                        $scope.wordNotFound = false;
+                        $scope.lyrics = response.data;
+                        console.log("word was found");
+                    }
+
                     console.log("genius api called");
-                    //$scope.lyricsFound = true;
-                    $scope.lyrics = response.data;
+
                 })
+
                 .then(function() {
                     console.log("calling text razor");
                     $http.get('http://localhost:3000/caption/lyrics/' + $scope.lyrics)
@@ -52,6 +67,7 @@ angular.module('myApp', ['ngRoute', 'ngCookies'])
             $scope.cap = $scope.caption[$scope.i];
             console.log($scope.i);
             console.log($scope.caption[$scope.i]);
+
             if ($scope.i == 8) {
                 $scope.finishedCaptions = true;
             }

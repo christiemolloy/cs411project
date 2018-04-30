@@ -97,6 +97,7 @@ router.get('/genius/:name', function(req, res, next) {
                     Lyrics.get(artist, title, function(err, results) {
                         if(err) {
                             console.log(err);
+                            res.send("error");
                         }
                         else {
                             console.log("Called the lyrics API");
@@ -210,6 +211,7 @@ router.get('/lyrics/:name', function(req,res,next){
               console.log("hi" + jsonObj.response.sentences[0].words[i].partOfSpeech);
               if(jsonObj.response.sentences[0].words[i].partOfSpeech === "NN" || jsonObj.response.sentences[0].words[i].partOfSpeech === "NNS") {
                 if(jsonObj.response.sentences[0].words[i].token != token1 && jsonObj.response.sentences[0].words[i].token != token2 && jsonObj.response.sentences[0].words[i].token != token3 && jsonObj.response.sentences[0].words[i].token != token4) {
+                  console.log("this is token5 for dog" + jsonObj.response.sentences[0].words[i].token)
                   token5 = jsonObj.response.sentences[0].words[i].token;
                 };
               }
