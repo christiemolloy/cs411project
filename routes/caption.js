@@ -156,7 +156,7 @@ router.get('/lyrics/:name', function(req,res,next){
             var token3 = String(jsonObj.response.sentences[0].words[numberRan3].token);
             var token4 = String(jsonObj.response.sentences[0].words[numberRan4].token);
 
-            <!-- Finding Noun 1 -->
+            <!-- Finding Noun1 -->
             for (i=0; i < jsonObj.response.sentences[0].words.length; i++) {
               if(jsonObj.response.sentences[0].words[i].partOfSpeech === "NN" || jsonObj.response.sentences[0].words[i].partOfSpeech === "NNS" || jsonObj.response.sentences[0].words[i].partOfSpeech === "NNS") {
                 token1 = jsonObj.response.sentences[0].words[i].token;
@@ -292,7 +292,7 @@ router.get('/lyrics/:name', function(req,res,next){
 
 
             res.json([string1, string2, string3, string4, string5, string6, string7, string8]);
-            console.log(token1, token2, token3, token4, token5, token6, token7, token8);
+            //console.log(token1, token2, token3, token4, token5, token6, token7, token8);
         }
     }
 
