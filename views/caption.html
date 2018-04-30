@@ -80,7 +80,7 @@
 
                <div class="row">
 
-                    <div class="col-md-8 col-sm-12">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
                          <div class="blank">
                               <form name="myForm">
                                    <label style="color:#ffffff;text-align:left;font-size:20px">Please enter the image URL:<br>
@@ -88,9 +88,9 @@
                                         <input type="submit" data-ng-click="SubmitImage(url.text)" value="Search" style="border:none;background-color:#EC7063;height:45px;width:90px;border-radius:2px;color:#FFFFFF">
                                    </label>
                               </form>
-                         </div><div ng-show="imageSearched">
+                         </div><div ng-show="imageSearched" class="col-lg-12" style="text-align:center">
 
-                        <label style="padding-top: 20px;padding-left: 130px">
+                        <label style="padding-top: 20px;">
 
                             <p><b>Pick a word</b></p>
 
@@ -142,12 +142,12 @@
 
 
                         <div ng-show = "captionFound">
-                            <h3 style="padding-top:100px;padding-bottom:100px">Here is your caption</h3>
+                            <h3 style="padding-top:20px;padding-bottom:20px">Here is your caption</h3>
 
 
                             <!-- Image -->
-                            <div>
-                                <img ng-src= {{imageLink}} alt="image link"/>
+                            <div >
+                                <img style="width:50%; height:50%;" ng-src= {{imageLink}} alt="image link"/>
                             </div>
 
                             <!--Caption-->
@@ -178,7 +178,7 @@
                         </div>
 
                         <div ng-show = "wordNotFound">
-                            <h1> SORRY, no captions found for that word...</h1>
+                            <h1> Sorry, no captions found for that word...</h1>
                             <input type="submit" onclick="smoothScroll(document.getElementById('getHere'))" value="Try another word" />
                         </div>
                     </div>
