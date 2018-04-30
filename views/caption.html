@@ -63,7 +63,7 @@
 
                     <ul class="nav navbar-nav navbar-right">
                          <li><a href="#" class="smoothScroll">Caption</a></li>
-                         <li><a href="#" class="smoothScroll">Hi, <%= name %></a></li>
+                         <li><a href="profile" class="smoothScroll">Hi, <%= name %></a></li>
                          <li><button type = "submit" value="Log out" data-ng-click="logout()"></button></li>
 
                     </ul>
@@ -164,7 +164,7 @@
                             </div>
 
                             <div>
-                                <input type="submit" data-ng-click="saveCaption()" value="Save this caption" />
+                                <input type="submit" data-ng-click="saveCaption(cap, imageurl, userid)" value="Save this caption" />
                             </div>
                         </div>
 
