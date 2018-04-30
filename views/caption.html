@@ -146,13 +146,13 @@
                                 {{cap}}
                             </h1>
 
-                        </div>
+                            <div>
+                                <div ng-hide="finishedCaptions">
+                                    <input type="submit" data-ng-click="changeCaption()" value="Change Caption" ng-show="captionFound" />
+                                </div>
 
-                        <div>
-                            <div ng-hide="finishedCaptions">
-                                <input type="submit" data-ng-click="changeCaption()" value="Change Caption" ng-show="captionFound" />
-                            </div>
 
+                                
 
                             <div ng-show="finishedCaptions">
                                 <h1> NO MORE CAPTIONS FOUND :( </h1>
