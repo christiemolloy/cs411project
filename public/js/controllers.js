@@ -4,6 +4,7 @@ angular.module('myApp', ['ngRoute', 'ngCookies'])
         $scope.imageSearched = false;
 
         $scope.SubmitImage = function(input) {
+            $scope.imageLink = input;
             console.log("calling clarifai api");
             let userid = $cookies.get('userId')
             $http.get('http://localhost:3000/caption/clarifai/' + userid + '/' + encodeURIComponent(input))
@@ -64,6 +65,7 @@ angular.module('myApp', ['ngRoute', 'ngCookies'])
             $scope.cap = $scope.caption[$scope.i];
             console.log($scope.i);
             console.log($scope.caption[$scope.i]);
+
             if ($scope.i == 8) {
                 $scope.finishedCaptions = true;
             }
