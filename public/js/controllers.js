@@ -38,10 +38,29 @@ angular.module('myApp', ['ngRoute', 'ngCookies'])
                         .then(function(response) {
                             $scope.captionFound = true;
                             $scope.caption = response.data;
-                            console.log($scope.caption);
+                            $scope.i = 0;
+                            $scope.cap = $scope.caption[$scope.i];
+                            console.log($scope.cap);
                         })
                 })
         };
+
+        $scope.changeCaption = function() {
+            $scope.i += 1;
+            $scope.cap = $scope.caption[$scope.i];
+            console.log($scope.i);
+            console.log($scope.caption[$scope.i]);
+            if ($scope.i == 8) {
+                $scope.finishedCaptions = true;
+            }
+        };
+
+        $scope.noMoreCaptions = function() {
+            $scope.finishedCaptions = false; 
+            $scope.i = 0;
+            $scope.cap = $scope.caption[$scope.i];
+        }
+
 
 
         $scope.initApp = function ( ) {
