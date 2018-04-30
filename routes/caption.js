@@ -176,11 +176,7 @@ router.get('/lyrics/:name', function(req,res,next){
               }
               else {
                 i++;
-                if(jsonObj.response.sentences[0].words[jsonObj.response.sentences[0].words.length-2].partOfSpeech != "NN" && jsonObj.response.sentences[0].words[i].partOfSpeech != "NNS") {
-                  token2 = token1;
                 }
-              }
-
             }
 
             <!-- Finding Noun3-->
@@ -193,9 +189,6 @@ router.get('/lyrics/:name', function(req,res,next){
               }
                 else {
                   i++;
-                  if(jsonObj.response.sentences[0].words[jsonObj.response.sentences[0].words.length-2].partOfSpeech != "NN" && jsonObj.response.sentences[0].words[i].partOfSpeech != "NNS") {
-                    token3 = token1;
-                  }
               }
 
             }
@@ -210,9 +203,6 @@ router.get('/lyrics/:name', function(req,res,next){
               }
               else {
                 i++;
-                if(jsonObj.response.sentences[0].words[jsonObj.response.sentences[0].words.length-2].partOfSpeech != "NN" && jsonObj.response.sentences[0].words[i].partOfSpeech != "NNS") {
-                  token4 = token1;
-                }
               }
 
             }
@@ -231,12 +221,7 @@ router.get('/lyrics/:name', function(req,res,next){
                 }
                 else {
                   i++;
-                  if(jsonObj.response.sentences[0].words[jsonObj.response.sentences[0].words.length-2].partOfSpeech != "NN" && jsonObj.response.sentences[0].words[i].partOfSpeech != "NNS") {
-                    token5 = "hi";
-                  }
               }
-
-
             }
 
             <!-- Finding Noun6-->
@@ -249,34 +234,10 @@ router.get('/lyrics/:name', function(req,res,next){
                 }
                 else {
                   i++;
-                  if(jsonObj.response.sentences[0].words[jsonObj.response.sentences[0].words.length-2].partOfSpeech != "NN" && jsonObj.response.sentences[0].words[i].partOfSpeech != "NNS") {
-                    token6 = token1;
-                  }
               }
 
             }
 
-            // <!-- Finding Noun7-->
-            // for (i=0; i < jsonObj.response.sentences[0].words.length; i++) {
-            //   //console.log("hi" + jsonObj.response.sentences[0].words[i].partOfSpeech);
-            //   if(jsonObj.response.sentences[0].words[i].partOfSpeech === "NN" || jsonObj.response.sentences[0].words[i].partOfSpeech === "NNS" || jsonObj.response.sentences[0].words[i].partOfSpeech === "NNP" || jsonObj.response.sentences[0].words[i].partOfSpeech === "NNPS" || ) {
-            //
-            //     if(jsonObj.response.sentences[0].words[i].token != token1 && jsonObj.response.sentences[0].words[i].token != token2 && jsonObj.response.sentences[0].words[i].token != token3 && jsonObj.response.sentences[0].words[i].token != token4 && jsonObj.response.sentences[0].words[i].token != token5 && jsonObj.response.sentences[0].words[i].token != token6) {
-            //       console.log("does it get here 7");
-            //       token7 = jsonObj.response.sentences[0].words[i].token;
-            //       if(token7 === undefined || token7 === null) {
-            //         token7 = token1;
-            //       }
-            //     };
-            //     }
-            //     else {
-            //       i++;
-            //       if(jsonObj.response.sentences[0].words[jsonObj.response.sentences[0].words.length-2].partOfSpeech != "NN" && jsonObj.response.sentences[0].words[i].partOfSpeech != "NNS") {
-            //         token7 = token1;
-            //         }
-            //     }
-            //
-            // }
 
 
             <!-- Finding Verb1 -->
@@ -297,7 +258,6 @@ router.get('/lyrics/:name', function(req,res,next){
               if(jsonObj.response.sentences[0].words[i].partOfSpeech === "VB" || jsonObj.response.sentences[0].words[i].partOfSpeech === "VBD" || jsonObj.response.sentences[0].words[i].partOfSpeech === "VBG" || jsonObj.response.sentences[0].words[i].partOfSpeech === "VBN" || jsonObj.response.sentences[0].words[i].partOfSpeech === "VBZ") {
                 if(jsonObj.response.sentences[0].words[i].token != token7) {
                 token8 = jsonObj.response.sentences[0].words[i].token;
-
               }
               else {
                 i++;
