@@ -64,11 +64,10 @@
                     <ul class="nav navbar-nav navbar-right">
                          <!--<li><a href="#" class="smoothScroll">Caption</a></li>-->
 
-                         <li class="smoothScroll">Hi, <%= name %></li>
+                         <li class="smoothScroll" style="color:#FFFFFF; padding:15px">Hi, <%= name %></li>
                         <!-- Made this no longer a link as we don't have a "profile" page -->
 
-                         <li><button type = "submit" ng-show= "<%= authStatus %>" data-ng-click="logout()" value="Log out"></button></li>
-
+                        <li><button type="submit" ng-show= "<%= authStatus %>" data-ng-click="logout()" value="LOG OUT" style="border:none;padding: 0 25px;background-color:#EC7063;color:#FFFFFF;height:40px;width:100px;font-size: 10pt;border-radius:3px;">LOG OUT</button> </li>
                     </ul>
                </div>
 
@@ -152,7 +151,7 @@
 
                             <!-- Image -->
                             <div >
-                                <img style="width:50%; height:50%;" ng-src= {{imageLink}} alt="image link"/>
+                                <img style=" height:300px;" ng-src= {{imageLink}} alt="image link" />
                             </div>
 
                             <!--Caption-->
@@ -164,29 +163,29 @@
 
                             <div>
                                 <div ng-hide="finishedCaptions">
-                                    <input type="submit" data-ng-click="changeCaption()" value="Change Caption" ng-show="captionFound" style="margin-top:40px;border:none;font-size:16pt;padding:5px;border-style:solid;background-color:#EC7063;height:45px;width:200px;border-radius:3px;color:#FFFFFF";/>
+                                    <input type="submit" data-ng-click="changeCaption()" value="Change Caption" ng-show="captionFound" style="margin-top:40px;border:none;font-size:16pt;padding:5px;background-color:#EC7063;height:45px;width:200px;border-radius:3px;color:#FFFFFF"/>
                                 </div>
 
 
                                 <div ng-show="finishedCaptions">
                                     <h1> We're Sorry! There's no more captions! </h1>
-                                    <input type="submit" data-ng-click="noMoreCaptions()" value="Go back to first caption!" style="margin-top:40px;border:none;font-size:16pt;padding:5px; border-style:solid;border-color:#EC7063;height:45px;width:250px;border-radius:3px;color:#EC7063" />
-                                    <input type="submit" onclick="smoothScroll(document.getElementById('getHere'))" value="Try another word" style="margin-top:40px;border:none;font-size:16pt;padding:5px; border-style:solid;border-color:#EC7063;height:45px;width:200px;border-radius:3px;color:#EC7063" />
+                                    <input type="submit" data-ng-click="noMoreCaptions()" value="Go back to first caption!" style="margin-top:40px;border:none;font-size:16pt;padding:2px; background-color:#EC7063;height:45px;width:250px;border-radius:3px;color:#FFFFFF" />
+                                    <input type="submit" onclick="smoothScroll(document.getElementById('getHere'))" value="Try another word" style="margin-top:40px;border:none;font-size:16pt;padding:5px; background-color:mediumpurple;height:45px;width:200px;border-radius:3px;color:#FFFFFF" />
                                 </div>
 
                                 <div>
-                                    <input type="submit" ng-show= "<%= authStatus %>" data-ng-click="saveCaption(cap, imageurl, userid)" value="{{saveButton}}" />
+                                    <input type="submit" ng-show= "<%= authStatus %>" data-ng-click="saveCaption(cap, imageurl, userid)" value="{{saveButton}}" style="margin-top:40px;border:none;font-size:16pt;padding:2px;background-color:#EC7063;height:45px;width:200px;border-radius:3px;color:#FFFFFF"/>
                                 </div>
 
                                 <div>
-                                    <input type="submit" ng-show= "<%= authStatus %>" data-ng-click="showPastCaptions(<%= authStatus %>)" value="Show past captions" onclick="smoothScroll(document.getElementById('oldCaptions'))"/>
+                                    <input type="submit" ng-show= "<%= authStatus %>" data-ng-click="showPastCaptions(<%= authStatus %>)" value="Show past captions" onclick="smoothScroll(document.getElementById('oldCaptions'))"style="margin-top:40px;border:none;font-size:16pt;padding:2px;background-color:#EC7063;height:45px;width:200px;border-radius:3px;color:#FFFFFF"/>
                                 </div>
 
                                 <div id="oldCaptions"></div>
                                 <div ng-show="gotData">
                                     <div ng-repeat="upload in uploads">
-                                        <img ng-src= {{upload.photo}} alt="photo"/>
-                                        {{upload.caption}}
+                                        <img ng-src= {{upload.photo}} alt="photo" style="width:300px;padding:5px"/><br>
+                                        <h1 style="font-size: 25px ">{{upload.caption}}</h1>
                                     </div>
                                 </div>
 
@@ -208,53 +207,48 @@
 
 
 
-     <!-- FOOTER -->
-     <footer  style="background-color:lightgrey; padding-top:100px; padding-bottom:100px;">
-          <div class="container">
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="row">
 
-               <div class="row">
-
-                    <div class="col-md-5 col-sm-6">
-                         <h2><b>Boston University</b></h2>
-                         <p>CS411<br> Team11</p>
+                <div class="col-md-5 col-sm-6">
+                    <h2>BostonU </h2>
+                    <p>CS411<br> Team11</p>
 
 
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="footer-info">
+                        <h2>Contact Us</h2>
+                        <!--<p><a href="tel:010-090-0780">010-090-0780</a></p>-->
+                        <p><a href="mailto:capthat_info@gmail.com">capthat_info@gmail.com</a></p>
+                        <p><a href="#">Room#325, 725 Commonwealth Avenue,<br> Boston, MA 02215</a></p>
                     </div>
+                </div>
 
-                    <div class="col-md-4 col-sm-6">
-                         <div class="footer-info">
-                             <h2><b>Contact Us</b></h2>
-                              <!--<p><a href="tel:010-090-0780">010-090-0780</a></p>-->
-                              <p><a href="mailto:capthat_info@gmail.com">capthat_info@gmail.com</a></p>
-                              <p><a href="#">Room#325, 725 Commonwealth Avenue,<br> Boston, MA 02215</a></p>
-                         </div>
-
-                    </div>
-
-                    <!-- <div class="col-md-3 col-sm-12">
-
+                <!-- <div class="col-md-3 col-sm-12">
                       <h2>About Us</h2>
-
                       <ul class="social-icon">
                            <li><a href="#" class="fa fa-twitter"></a></li>
                            <li><a href="#" class="fa fa-facebook"></a></li>
                            <li><a href="#" class="fa fa-instagram"></a></li>
                            <li><a href="#" class="fa fa-linkedin"></a></li>
                       </ul>
-
                  </div>-->
 
-                    <div class="clearfix"></div>
+                <div class="clearfix"></div>
 
-                    <div class="col-md-12 col-sm-12">
-                         <div class="copyright-text">
-                              <p>Copyright © 2018 CapThat </p>
-                         </div>
+                <div class="col-md-12 col-sm-12">
+                    <div class="copyright-text">
+                        <p>Copyright © 2018 CapThat </p>
                     </div>
+                </div>
 
-               </div>
-          </div>
-     </footer>
+            </div>
+        </div>
+    </footer>
 
 </div>
 
