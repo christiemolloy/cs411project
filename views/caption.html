@@ -159,18 +159,18 @@
 
                             <div>
                                 <div ng-hide="finishedCaptions">
-                                    <input type="submit" data-ng-click="changeCaption()" value="Change Caption" ng-show="captionFound" style="margin-top:40px;border:none;font-size:16pt;padding:5px;border-style:solid;background-color:#EC7063;height:45px;width:175px;border-radius:2px;color:#FFFFFF";/>
+                                    <input type="submit" data-ng-click="changeCaption()" value="Change Caption" ng-show="captionFound" style="margin-top:40px;border:none;font-size:16pt;padding:5px;border-style:solid;background-color:#EC7063;height:45px;width:175px;border-radius:3px;color:#FFFFFF";/>
                                 </div>
 
 
                                 <div ng-show="finishedCaptions">
                                     <h1> We're Sorry! There's no more captions! </h1>
-                                    <input type="submit" data-ng-click="noMoreCaptions()" value="Go back to first caption!" style="margin-top:40px;border:none;font-size:16pt;padding:5px; border-style:solid;border-color:#EC7063;height:45px;width:225px;border-radius:2px;color:#EC7063" />
-                                    <input type="submit" onclick="smoothScroll(document.getElementById('getHere'))" value="Try another word" style="margin-top:40px;border:none;font-size:16pt;padding:5px; border-style:solid;border-color:#EC7063;height:45px;width:200px;border-radius:2px;color:#EC7063" />
+                                    <input type="submit" data-ng-click="noMoreCaptions()" value="Go back to first caption!" style="margin-top:40px;border:none;font-size:16pt;padding:5px; border-style:solid;border-color:#EC7063;height:45px;width:225px;border-radius:3px;color:#EC7063" />
+                                    <input type="submit" onclick="smoothScroll(document.getElementById('getHere'))" value="Try another word" style="margin-top:40px;border:none;font-size:16pt;padding:5px; border-style:solid;border-color:#EC7063;height:45px;width:200px;border-radius:3px;color:#EC7063" />
                                 </div>
 
                                 <div>
-                                    <input type="submit" data-ng-click="saveCaption(cap, imageurl, userid)" value="Save this caption" />
+                                    <input type="submit" data-ng-click="saveCaption(cap, imageurl, userid)" value="Save this caption" style="margin-top:40px;border:none;font-size:16pt;padding:5px;background-color:#6247AA;height:45px;width:200px;border-radius:2px;color:#FFFFFF"/>
                                 </div>
 
                             </div>
@@ -179,7 +179,7 @@
 
                         <div ng-show = "wordNotFound">
                             <h1> Sorry, no captions found for that word...</h1>
-                            <input type="submit" onclick="smoothScroll(document.getElementById('getHere'))" value="Try another word" />
+                            <input type="submit" onclick="smoothScroll(document.getElementById('getHere'))" value="Try another word" style="margin-top:40px;border:none;font-size:16pt;padding:5px;background-color:#6247AA;height:45px;width:200px;border-radius:2px;color:#FFFFFF" />
                         </div>
                     </div>
                 </div>
