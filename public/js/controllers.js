@@ -56,10 +56,16 @@ angular.module('myApp', ['ngRoute', 'ngCookies'])
         };
 
         $scope.noMoreCaptions = function() {
-            $scope.finishedCaptions = false; 
+            $scope.finishedCaptions = false;
             $scope.i = 0;
             $scope.cap = $scope.caption[$scope.i];
-        }
+        };
+
+
+        $scope.saveCaption = function() {
+
+        };
+
 
 
 
