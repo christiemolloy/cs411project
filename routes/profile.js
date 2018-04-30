@@ -29,11 +29,29 @@ router.get('/:caption/:user/:imageurl', function(req, res, next){
             }
             else{
             }
+        });
+    res.json(userid);
+    // console.log("trying to render");
+    // res.render('profile/' + userid);
+    // console.log("render happened!");
+
+    // res.json(userid)
+    // res.render('profile/' + userid, {name: userid});
+
+});
+
+
+router.get('/getdata/:user', function(req, res, next){
+    console.log("Got to getdata function");
+    let userid = req.params.user;
+    console.log(userid);
+    User.findOne({twitterID: userid}).exec()
+        .then(function(user){
+            console.log(user);
+            res.json(user)
         })
-    res.json(userid)
 
 })
-
 
 
 module.exports = router;

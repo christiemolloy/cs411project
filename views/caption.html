@@ -170,7 +170,18 @@
                                 </div>
 
                                 <div>
-                                    <input type="submit" data-ng-click="saveCaption(cap, imageurl, userid)" value="Save this caption" />
+                                    <input type="submit" ng-show= "<%= authStatus %>" data-ng-click="saveCaption(cap, imageurl, userid)" value="Save this caption" />
+                                </div>
+
+                                <div>
+                                    <input type="submit" ng-show= "<%= authStatus %>" data-ng-click="showPastCaptions(<%= authStatus %>)" value="Show past captions" />
+                                </div>
+
+                                <div ng-show="gotData">
+                                    <div ng-repeat="upload in uploads">
+                                        <img ng-src= {{upload.photo}} alt="photo"/>
+                                        {{upload.caption}}
+                                    </div>
                                 </div>
 
                             </div>
@@ -181,6 +192,8 @@
                             <h1> SORRY, no captions found for that word...</h1>
                             <input type="submit" onclick="smoothScroll(document.getElementById('getHere'))" value="Try another word" />
                         </div>
+
+
                     </div>
                 </div>
             </div>

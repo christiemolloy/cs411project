@@ -14,6 +14,8 @@ var usersRouter = require('./routes/users');
 //var imageRouter = require('./routes/image');
 var authRouter = require('./routes/auth');
 var profileRouter = require('./routes/profile');
+
+
 var app = express();
 
 // view engine setup
@@ -66,7 +68,6 @@ app.use(function(err, req, res, next) {
 
   res.status(err.status || 500);
   res.render('error');
-
 
 });
 

@@ -62,13 +62,16 @@
                <!-- MENU LINKS -->
                <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                         <li><a href="caption" class="smoothScroll">Caption</a></li>
-                         <li><a href="#" class="smoothScroll">Hi</a></li>
+                         <li><a href="caption" class="smoothScroll"> Create New Caption</a></li>
+                         <li><a href="#" class="smoothScroll">Hi </a></li>
                     </ul>
                </div>
 
+
+
           </div>
      </div>
+
 
 
      <!-- HOME -->
@@ -87,12 +90,25 @@
                </div>
           </div>
 
+          <div>
+
+               <div>
+                    <input type="submit" data-ng-click="showPastCaptions()" value="Show previous captions"/>
+               </div>
+
+               <div ng-show ="gotData">
+                    {{uploads}}
+               </div>
+
+          </div>
+
           <!-- Video -->
           <video controls="" autoplay="" loop="" muted>
                <source src="../videos/morning.mp4" type="video/mp4">
                Your browser does not support the video tag.
           </video>
      </section>
+
 
 
 
@@ -146,15 +162,15 @@
 </div>
 
 <!-- SCRIPTS -->
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.parallax.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/magnific-popup-options.js"></script>
-<script src="js/modernizr.custom.js"></script>
-<script src="js/smoothscroll.js"></script>
-<script src="js/custom.js"></script>
+<script src="/js/jquery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.parallax.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/jquery.magnific-popup.min.js"></script>
+<script src="/js/magnific-popup-options.js"></script>
+<script src="/js/modernizr.custom.js"></script>
+<script src="/js/smoothscroll.js"></script>
+<script src="/js/custom.js"></script>
 
 <!--Controllers for this page/app -->
 <script src = "/../js/controllers.js"></script>

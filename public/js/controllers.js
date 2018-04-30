@@ -1,5 +1,5 @@
 angular.module('myApp', ['ngRoute', 'ngCookies'])
-    .controller('myCtrl', function($scope, $http, $cookies, $location) {
+    .controller('myCtrl', function($scope, $http, $cookies, $location, $window) {
 
         $scope.imageSearched = false;
 
@@ -85,15 +85,46 @@ angular.module('myApp', ['ngRoute', 'ngCookies'])
             console.log("calling save caption");
             console.log("caption is");
             console.log(caption);
+
             $http.get('http://localhost:3000/profile/' + caption + '/' + user +  '/'+ encodeURIComponent(image))
-                .then(function(response){
-                    window.location.replace('http://localhost:3000/profile');
+                .then(function(response) {
+                    // console.log(response);
                 }, function (error) {
                     // not relevant
                 })
-
         };
 
+        $scope.gotoProfile = function(input) {
+            if(input == true) {
+                $window.location.replace('http://localhost:3000/profile/' + $scope.userid);
+            }
+            else {
+                console.log("you are not logged in");
+            }
+        };
+
+
+
+        $scope.gotData = false;
+        $scope.displayOldPhotos = false;
+        $scope.showPastCaptions = function(input) {
+            console.log(input)
+            if(input == true) {
+                $scope.displayOldPhotos = true;
+                console.log("button clicked");
+                $http.get('http://localhost:3000/profile/getdata/' + $scope.userid)
+                    .then(function(response){
+                        $scope.gotData = true;
+                        $scope.user = response.data;
+                        $scope.uploads = $scope.user.uploads;
+
+                    })
+            }
+            else {
+                console.log("you are not logged in");
+            }
+
+        };
 
 
 

@@ -33,19 +33,19 @@ router.get('/clarifai/:user/:name', function(req, res, next) {
     console.log("*****");
     console.log(req.params.name);
     console.log(searchkey);
-    User.findOneAndUpdate({twitterID: userId},
-        {
-            $addToSet: {
-                uploads: {photo: searchkey}
-            }
-        },
-        function(err, result){
-            if(err){
-                console.log(err)
-            }
-            else{
-            }
-        })
+    // User.findOneAndUpdate({twitterID: userId},
+    //     {
+    //         $addToSet: {
+    //             uploads: {photo: searchkey}
+    //         }
+    //     },
+    //     function(err, result){
+    //         if(err){
+    //             console.log(err)
+    //         }
+    //         else{
+    //         }
+    //     })
     Clarifai_app.models.predict(Clarifai.GENERAL_MODEL, searchkey).then(
         function(response) {
             console.log(JSON.stringify(response));
