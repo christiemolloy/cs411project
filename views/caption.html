@@ -155,27 +155,24 @@
                                 </div>
 
 
+                                <div ng-show="finishedCaptions">
+                                    <h1> We're Sorry! There's no more captions! </h1>
+                                    <input type="submit" data-ng-click="noMoreCaptions()" value="Go back to first caption!" />
+                                    <input type="submit" onclick="smoothScroll(document.getElementById('getHere'))" value="Try another word" />
+                                </div>
 
+                                <div>
+                                    <input type="submit" data-ng-click="saveCaption()" value="Save this caption" style="margin-top: 80px;border:none;background-color:#8A84E2;height:45px;font-size:16pt; width:200px;border-radius:2px;color:#FFFFFF"/>
+                                </div>
 
-                            <div ng-show="finishedCaptions">
-                                <h1> We're Sorry! There's no more captions! </h1>
-                                <input type="submit" data-ng-click="noMoreCaptions()" value="Go back to first caption!" />
-                                <input type="submit" onclick="smoothScroll(document.getElementById('getHere'))" value="Try another word" />
                             </div>
 
-                            <div>
-                                <input type="submit" data-ng-click="saveCaption()" value="Save this caption" style="margin-top: 80px;border:none;background-color:#8A84E2;height:45px;font-size:16pt; width:200px;border-radius:2px;color:#FFFFFF"/>
-                            </div>
-
-                            <div ng-show = "wordNotFound">
-                                <h1> SORRY, no captions found for that word...</h1>
-                                <input type="submit" data-ng-click="" value="Try another word" />
-                            </div>
                         </div>
 
-
-
-                    </div>
+                        <div ng-show = "wordNotFound">
+                            <h1> SORRY, no captions found for that word...</h1>
+                            <input type="submit" onclick="smoothScroll(document.getElementById('getHere'))" value="Try another word" />
+                        </div>
                 </div>
             </div>
         </div>

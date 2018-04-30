@@ -30,12 +30,16 @@ angular.module('myApp', ['ngRoute', 'ngCookies'])
                     console.log(response);
 
                     if(response.data == "error") {
-                        $scope.lyrics = "";
+                        $scope.captionFound = false;
                         $scope.wordNotFound = true;
+                        $scope.lyrics = "";
+                        console.log("word is not found");
                         // insert pop up
                     }
                     else {
+                        $scope.wordNotFound = false;
                         $scope.lyrics = response.data;
+                        console.log("word was found");
                     }
 
                     console.log("genius api called");
