@@ -63,7 +63,7 @@
 
                     <ul class="nav navbar-nav navbar-right">
                          <li><a href="#" class="smoothScroll">Caption</a></li>
-                         <li><a href="#" class="smoothScroll">Hi, <%= name %></a></li>
+                         <li><a href="profile" class="smoothScroll">Hi, <%= name %></a></li>
                          <li><button type = "submit" value="Log out" data-ng-click="logout()"></button></li>
 
                     </ul>
@@ -145,7 +145,7 @@
                             <h3 style="padding-top:100px;padding-bottom:100px">Here is your caption</h3>
 
 
-                            <!-- Image --> 
+                            <!-- Image -->
                             <div>
                                 <img ng-src= {{imageLink}} alt="image link"/>
                             </div>
@@ -170,7 +170,7 @@
                                 </div>
 
                                 <div>
-                                    <input type="submit" data-ng-click="saveCaption()" value="Save this caption" style="margin-top: 80px;border:none;background-color:#8A84E2;height:45px;font-size:16pt; width:200px;border-radius:2px;color:#FFFFFF"/>
+                                    <input type="submit" data-ng-click="saveCaption(cap, imageurl, userid)" value="Save this caption" />
                                 </div>
 
                             </div>
