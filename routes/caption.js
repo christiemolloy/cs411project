@@ -33,25 +33,11 @@ router.get('/clarifai/:user/:name', function(req, res, next) {
     console.log("*****");
     console.log(req.params.name);
     console.log(searchkey);
-    // User.findOneAndUpdate({twitterID: userId},
-    //     {
-    //         $addToSet: {
-    //             uploads: {photo: searchkey}
-    //         }
-    //     },
-    //     function(err, result){
-    //         if(err){
-    //             console.log(err)
-    //         }
-    //         else{
-    //         }
-    //     })
+
     Clarifai_app.models.predict(Clarifai.GENERAL_MODEL, searchkey).then(
         function(response) {
             console.log(JSON.stringify(response));
             res.send(response.outputs[0].data.concepts);
-
-            //res.render('image', { title:'recognition result', result: JSON.parse(JSON.stringify(response))});
         },
         function(err) {
             console.error(err);
@@ -81,11 +67,8 @@ router.get('/genius/:name', function(req, res, next) {
             console.log(word);
             var title = response.hits[0].result.title;
             var artist = response.hits[0].result.full_title.split("by")[1];
-            console.log("title is: ", title);
-            console.log("artist is: ", artist);
 
             wordLyrics.count({word: word},function(err, result){
-                console.log("The number of matching entry found is ");
                 console.log(result);
                 if(result != 0){
                     wordLyrics.findOne({word: word}, function(err, result){
@@ -105,7 +88,6 @@ router.get('/genius/:name', function(req, res, next) {
                             var parsed_result = results.split('\n');
                             wordLyrics.create({word: String(word), lyrics: parsed_result});
                             res.json(parsed_result);
-                            //res.render('lyrics', {title: 'lyrics', result: parsed_result});
                         }
                     })
                 }
@@ -292,7 +274,6 @@ router.get('/lyrics/:name', function(req,res,next){
 
 
             res.json([string1, string2, string3, string4, string5, string6, string7, string8]);
-            //console.log(token1, token2, token3, token4, token5, token6, token7, token8);
         }
     }
 

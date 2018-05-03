@@ -18,21 +18,4 @@ router.get('/caption', function(req, res, next) {
 });
 
 
-/* GET twitter user profile page. */
-router.get('/profile', function(req, res, next) {
-    res.render('profile', { name: 'user'});
-});
-
-
-/* GET image page. */
-router.get('/image', function(req, res, next) {
-    res.render('image', { title: 'Upload image' });
-});
-
-
-
-
-
-
-
 module.exports = router;

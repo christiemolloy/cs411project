@@ -1,26 +1,24 @@
 Planned database structure (mongoDB): 
+
+Users:
+
 {
-	‘id’: 0001, 
-	‘name’: {email:’cmolloy@bu.edu’, username: ‘cmolloy’}, 
-	‘capthats’ : 
-[
-		{
-			‘photoID’: 001, 
-			‘photolink’: ‘link.html’
-			‘keywords’ : {‘word’, ‘word’, ‘word’}
-			‘song1’ : ‘…lyrics…’
-			‘caption’: ‘…’
-		}, 
-		{
-			‘photoID’: 001, 
-			‘photolink’: ‘link.html’
-			‘keywords’ : {‘word’, ‘word’, ‘word’}
-			‘song1’ : ‘…lyrics…’
-			‘caption’: ‘…’
-		},
-]
+	‘twitterID’: 0123456, 
+	‘name’: HeDebby,
+	'username': Deborah He.
+	'uploads': [{photo: "http://cdn2-www.cattime.com/assets/uploads/gallery/exotic-cats-and-kittens/exotic-cats-and-kittens-5.jpg", caption: "I only love my boy and my wrist, I'm sorry!"}, {"photo" : "http://www.heloisaamante.com.br/press/wp-content/uploads/2018/02/goldie.jpg", "caption" : "That face when you look at feed!"}]
+
+}
+
+
+wordLyrics:
+{
+	'word': 'cute',
+	'lyrics': ["Yeah I'm almost red a little bit, I get crazy as a felon", "I choose you now you have to deal", "But you're so cute you can make me chill", "", "I think you're cute, I think you're cute", "Oh yes I do, I think you're cute", "I think you're cute, I think you're cute", "Oh yes I do, I think you're cute", "", "Girl we need to go out on a date", "We can really do a little something", "If it's cool I'll pick you up at 8", "We can really do a little something", "We can really do a little something baby", "Looking at this pretty face, it drives me crazy" ]
+
 }
 
 Planned cache implementation: 
-We plan to cache the words we receive describing the photo from the first API call to the clarifai API. Then, we will use those cached words in order to find corresponding song lyrics. We will again cache the lyrics after using the song lyric API in order to call the last API to pick a caption for the photo. 
+We plan to store user information and saved captions. We will store user's twitterID, name, username, and a list of the photo-caption pairs they saved so that we can show them to the user later.
+We plan to cache the lyrics associated with the words we received describing the photo from the first API call to the clarifai API. Then, we will use those cached words and lyrics in order to call the last API to pick a caption for the photo. 
 

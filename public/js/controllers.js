@@ -106,14 +106,11 @@ angular.module('myApp', ['ngRoute', 'ngCookies'])
             console.log(input)
             if(input == true) {
                 $scope.displayOldPhotos = true;
-                console.log("button clicked");
                 $http.get('http://localhost:3000/profile/getdata/' + $scope.userid)
                     .then(function(response){
                         $scope.gotData = true;
                         $scope.user = response.data;
-                        console.log($scope.user);
                         $scope.uploads = $scope.user.uploads;
-                        console.log($scope.uploads);
 
                     })
             }
@@ -126,19 +123,11 @@ angular.module('myApp', ['ngRoute', 'ngCookies'])
 
 
         $scope.initApp = function ( ) {
-            // $scope.buttonState = "create"
-            // $scope.h2message = "Add user"
-            // $scope.buttonMessage = "Add User"
             $scope.authorized = false;
             $scope.showLogin = false;
-            // $scope.getUsers()
             //Grab cookies if present
             let authCookie = $cookies.get('authStatus');
             $scope.authorized = !!authCookie;
-            // $scope.google_image_hide = true
-            // $scope.twitter_hide = true
-            // $scope.google_image_old = true
-            // $scope.youtube_hide = true
         };
 
         $scope.logout = function () {
@@ -167,10 +156,6 @@ angular.module('myApp', ['ngRoute', 'ngCookies'])
                         $scope.authorized = false
                     }
                 )
-        };
-
-        $scope.showLoginForm = function () {
-            $scope.showLogin = true
         };
 
         $scope.doTwitterAuth = function () {
